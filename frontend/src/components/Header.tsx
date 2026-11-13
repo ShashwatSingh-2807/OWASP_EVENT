@@ -37,7 +37,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
             className="group relative flex-shrink-0 rounded-full text-left transition-transform hover:scale-[1.03] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-4 focus-visible:ring-offset-amber-950"
             title="Open the authentic Bawaal Chaiwala menu"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-amber-500 shadow-xl ring-4 ring-amber-700/50 relative">
+            <span className="relative block h-20 w-20 overflow-hidden rounded-full border-2 border-amber-400 shadow-lg ring-4 ring-amber-700/40 sm:h-24 sm:w-24">
               <Image
                 src="/bawaal-logo.jpg"
                 alt="Bawaal Chaiwala Logo"
@@ -46,7 +46,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
                 className="object-cover group-hover:brightness-110 transition-all"
                 priority
               />
-            </div>
+            </span>
             <span className="absolute -bottom-1 -right-1 bg-amber-500 text-stone-950 font-bold text-[10px] uppercase px-1.5 py-0.5 rounded-full shadow-md">
               Tapri
             </span>
