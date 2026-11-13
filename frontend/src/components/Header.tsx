@@ -75,7 +75,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
         {/* Live Operational Metrics Ribbon */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 w-full lg:w-auto">
           {/* Metric 1: Day */}
-          <div className="bg-[#38261E]/90 backdrop-blur border border-[#76503B]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
+          <div className="bg-[#493027]/90 backdrop-blur border border-[#76503B]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
             <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30">
               <Calendar className="w-5 h-5" />
             </div>
@@ -86,7 +86,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
           </div>
 
           {/* Metric 2: Wallet Budget */}
-          <div className="bg-[#38261E]/90 backdrop-blur border border-[#76503B]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
+          <div className="bg-[#493027]/90 backdrop-blur border border-[#76503B]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
             <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-[#F0DFCE] border border-[#493027]/30">
               <Wallet className="w-5 h-5" />
             </div>
@@ -97,7 +97,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
           </div>
 
           {/* Metric 3: Weather & Demand */}
-          <div className="bg-[#38261E]/90 backdrop-blur border border-[#493027]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
+          <div className="bg-[#493027]/90 backdrop-blur border border-[#493027]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
             <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-2xl">
               {weatherInfo.icon}
             </div>
@@ -115,8 +115,8 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
           {/* Metric 4: Customer Rating & Milk Warning */}
           <div className={`backdrop-blur border rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3 ${
             isMilkShocked
-              ? 'bg-[#38261E]/85 border-[#493027]/50 ring-1 ring-[#493027]/40'
-              : 'bg-[#38261E]/90 border-[#76503B]/30'
+              ? 'bg-[#493027]/85 border-[#493027]/50 ring-1 ring-[#493027]/40'
+              : 'bg-[#493027]/90 border-[#76503B]/30'
           }`}>
             <div className={`p-2 sm:p-2.5 rounded-lg ${
               isMilkShocked ? 'bg-[#A87557]/20 text-[#F0DFCE]' : 'bg-[#A87557]/20 text-[#F0DFCE]'
