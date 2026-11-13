@@ -59,7 +59,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
             </p>
           </div>
           <div className="border-l border-stone-800 pl-3">
-            <span className="text-[10px] text-stone-400 uppercase font-semibold block">Bottleneck</span>
+            <span className="text-[11px] tracking-wide text-stone-400 uppercase font-semibold block">Bottleneck</span>
             <span className="text-xs font-semibold text-amber-300 flex items-center gap-1">
               <AlertCircle className="w-3 h-3 text-amber-400 inline" />
               {maxCapacity.bottleneckName.split(' ')[0]}
@@ -70,14 +70,14 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
 
       {/* Temporary purchase toast feedback */}
       {purchaseFeedback && (
-        <div className="mt-3 p-2.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-200 text-xs font-medium flex items-center gap-2 animate-fadeIn">
+        <div role="status" aria-live="polite" className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm font-medium text-amber-100 animate-fadeIn">
           <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
           <span>{purchaseFeedback}</span>
         </div>
       )}
 
       {/* Ingredient Stock Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 mt-5">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 mt-5">
         {ingredientsList.map(([key, item]) => {
           const isBottleneck = maxCapacity.bottleneckIngredient === key;
           const isMilkShock = key === 'milk' && gameState.shock.triggered;
@@ -168,6 +168,8 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                     return (
                       <button
                         key={inc}
+                        type="button"
+                        aria-label={`Restock ${item.name}: add ${inc} ${item.unit} for ₹${cost.toFixed(2)}`}
                         onClick={() => handleBuy(key, inc)}
                         disabled={!canAfford}
                         className={`py-1.5 px-1 rounded-md text-xs font-medium text-center transition-all flex flex-col items-center justify-center ${
@@ -185,6 +187,8 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
 
                   {/* Max Button */}
                   <button
+                    type="button"
+                    aria-label={`Restock ${item.name} with the maximum affordable quantity: ${maxAffordable} ${item.unit}`}
                     onClick={() => {
                       if (maxAffordable > 0) handleBuy(key, maxAffordable);
                     }}
