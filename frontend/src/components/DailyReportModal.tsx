@@ -50,11 +50,11 @@ export default function DailyReportModal({
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="daily-report-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#211713]/80 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-gradient-to-b from-[#493027] via-[#493027] to-[#211713] border border-[#493027] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-8 max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-3xl bg-gradient-to-b from-[#493027] via-[#493027] to-[#211713] border-2 border-[#A87557] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-8 max-h-[90vh] overflow-y-auto">
         {/* Step 02 Judge Badge */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
+        <div className="flex items-center justify-between pb-4 border-b border-[#A87557] flex-wrap gap-2">
           <div className="flex items-center gap-2.5">
-            <span className="px-3 py-1 rounded-full bg-[#A87557]/20 text-[#F0DFCE] border border-[#493027]/40 text-xs font-mono font-bold tracking-wide flex items-center gap-1.5">
+            <span className="px-3 py-1 rounded-full bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557] text-xs font-mono font-bold tracking-wide flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               JUDGE DEMO STEP 02 VERIFIED
             </span>
@@ -71,8 +71,8 @@ export default function DailyReportModal({
         {/* Big Profit / Loss Hero Banner */}
         <div className={`mt-5 p-5 rounded-2xl border text-center relative overflow-hidden ${
           isProfitable
-            ? 'bg-gradient-to-r from-[#493027]/60 via-[#76503B] to-[#493027]/60 border-[#493027]/60 shadow-lg'
-            : 'bg-gradient-to-r from-[#493027]/60 via-[#76503B] to-[#493027]/60 border-[#493027]/60 shadow-lg'
+            ? 'bg-gradient-to-r from-[#493027]/60 via-[#76503B] to-[#493027]/60 border-[#A87557] shadow-lg'
+            : 'bg-gradient-to-r from-[#493027]/60 via-[#76503B] to-[#493027]/60 border-[#A87557] shadow-lg'
         }`}>
           <span className="text-xs uppercase tracking-widest text-[#D0A98B] font-semibold block">
             Net Daily Profit
@@ -95,7 +95,7 @@ export default function DailyReportModal({
         {/* Financial Breakdown Grid (STEP 02 REQUIREMENTS) */}
         <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
           {/* Revenue */}
-          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#A87557] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Gross Revenue</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono">
               ₹{report.grossRevenue.toFixed(2)}
@@ -106,7 +106,7 @@ export default function DailyReportModal({
           </div>
 
           {/* Ingredient Costs */}
-          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#A87557] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Ingredient Cost (COGS)</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono">
               -₹{report.ingredientCost.toFixed(2)}
@@ -117,7 +117,7 @@ export default function DailyReportModal({
           </div>
 
           {/* Fixed Overhead */}
-          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#A87557] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Tapri Overhead</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono">
               -₹{report.overheadCost.toFixed(2)}
@@ -128,7 +128,7 @@ export default function DailyReportModal({
           </div>
 
           {/* Customer Rating */}
-          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#A87557] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Customer Rating</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono flex items-center justify-center gap-1">
               <Star className="w-4 h-4 fill-amber-400 text-[#F0DFCE]" />
@@ -142,7 +142,7 @@ export default function DailyReportModal({
 
         {/* Stockout / Demand Gap Alert */}
         {hasLostDemand && (
-          <div className="mt-4 p-3.5 rounded-xl bg-[#493027]/40 border border-[#76503B]/40 flex items-start gap-3 text-xs">
+          <div className="mt-4 p-3.5 rounded-xl bg-[#493027]/40 border border-[#A87557] flex items-start gap-3 text-xs">
             <AlertTriangle className="w-5 h-5 text-[#F0DFCE] shrink-0 mt-0.5" />
             <div>
               <p className="font-bold text-[#F0DFCE]">
@@ -166,9 +166,9 @@ export default function DailyReportModal({
             {report.feedbacks.map((fb) => (
               <div
                 key={fb.id}
-                className="bg-[#493027]/85 border border-[#493027]/80 rounded-xl p-3 flex items-start gap-3"
+                className="bg-[#493027]/85 border border-[#A87557] rounded-xl p-3 flex items-start gap-3"
               >
-                <div className="text-2xl p-1.5 rounded-lg bg-[#493027] border border-[#493027] shrink-0">
+                <div className="text-2xl p-1.5 rounded-lg bg-[#493027] border border-[#A87557] shrink-0">
                   {fb.avatar}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -192,13 +192,13 @@ export default function DailyReportModal({
         </div>
 
         {/* Modal Action Buttons */}
-        <div className="mt-6 pt-4 border-t border-[#493027] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-6 pt-4 border-t border-[#A87557] flex flex-col sm:flex-row items-center justify-between gap-3">
           {/* Step 03 Quick Trigger Button for Judges */}
           {!gameState.shock.triggered && (
             <button
               type="button"
               onClick={onTriggerShock}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#211713] font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-[#76503B]"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#211713] font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-[#A87557]"
             >
               <Zap className="w-4 h-4 text-[#F0DFCE]" />
               <span>Proceed to STEP 03: Trigger Milk Shock!</span>
@@ -209,7 +209,7 @@ export default function DailyReportModal({
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#76503B] hover:bg-[#A87557] active:scale-95 text-[#F0DFCE] font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all border border-[#76503B]/40 ml-auto"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#76503B] hover:bg-[#A87557] active:scale-95 text-[#F0DFCE] font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all border border-[#A87557] ml-auto"
           >
             <ShoppingBag className="w-4 h-4" />
             <span>Go to Day {gameState.day} Planning & Market</span>
