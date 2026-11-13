@@ -25,7 +25,7 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="menu-modal-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/60 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-white border-2 border-sky-300/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-6 max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-white border border-sky-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-900 my-6 max-h-[92vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-200">
           <div className="flex items-center gap-2.5">
@@ -44,7 +44,7 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
             type="button"
             aria-label="Close official menu"
             onClick={onClose}
-            className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
