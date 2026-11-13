@@ -50,7 +50,7 @@ export default function DailyReportModal({
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="daily-report-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#120C09]/80 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-gradient-to-b from-[#F0DFCE] via-[#F0DFCE] to-[#493027] border border-[#493027] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-8 max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-3xl bg-gradient-to-b from-[#493027] via-[#493027] to-[#211713] border border-[#493027] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-8 max-h-[90vh] overflow-y-auto">
         {/* Step 02 Judge Badge */}
         <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
           <div className="flex items-center gap-2.5">
@@ -71,8 +71,8 @@ export default function DailyReportModal({
         {/* Big Profit / Loss Hero Banner */}
         <div className={`mt-5 p-5 rounded-2xl border text-center relative overflow-hidden ${
           isProfitable
-            ? 'bg-gradient-to-r from-[#493027]/60 via-[#F0DFCE] to-[#493027]/60 border-[#493027]/60 shadow-lg'
-            : 'bg-gradient-to-r from-[#493027]/60 via-[#F0DFCE] to-[#493027]/60 border-[#493027]/60 shadow-lg'
+            ? 'bg-gradient-to-r from-[#493027]/60 via-[#76503B] to-[#493027]/60 border-[#493027]/60 shadow-lg'
+            : 'bg-gradient-to-r from-[#493027]/60 via-[#76503B] to-[#493027]/60 border-[#493027]/60 shadow-lg'
         }`}>
           <span className="text-xs uppercase tracking-widest text-[#D0A98B] font-semibold block">
             Net Daily Profit
