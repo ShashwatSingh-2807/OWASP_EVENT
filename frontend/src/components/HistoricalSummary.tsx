@@ -39,7 +39,7 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
   const avgRating = Math.round((totals.ratingSum / reports.length) * 10) / 10;
 
   return (
-    <section className="bg-stone-900/90 border border-amber-600/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
+    <section className="bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-700/80 rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title */}
       <div className="flex items-center justify-between pb-4 border-b border-stone-800 flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
@@ -94,9 +94,9 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
       </div>
 
       {/* Daily Progression Table */}
-      <div className="mt-5 overflow-x-auto">
-        <table className="w-full text-left text-xs border-collapse">
-          <thead>
+      <div className="mt-5 overflow-x-auto rounded-xl border border-stone-800/80" role="region" aria-label="Daily performance history" tabIndex={0}>
+        <table className="w-full min-w-[820px] border-collapse text-left text-xs">
+          <thead className="bg-stone-950/80">
             <tr className="border-b border-stone-800 text-stone-400 uppercase tracking-wider font-semibold">
               <th className="py-2.5 px-3">Day</th>
               <th className="py-2.5 px-3">Weather</th>

@@ -33,7 +33,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
   const ingredientsList = Object.entries(gameState.inventory) as [keyof InventoryMap, typeof gameState.inventory['tea_leaves']][];
 
   return (
-    <section className="bg-stone-900/90 border border-amber-600/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
+    <section className="bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-700/80 rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title & Live Capacity Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-stone-800 gap-3">
         <div className="flex items-center gap-2.5">
@@ -53,13 +53,13 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
         {/* Live Brewable Capacity Badge */}
         <div className="bg-stone-950 border border-amber-500/40 rounded-xl px-4 py-2 flex items-center gap-3">
           <div className="text-right">
-            <p className="text-[10px] text-stone-400 uppercase font-semibold">Max Brewable</p>
+            <p className="text-[11px] tracking-wide text-stone-400 uppercase font-semibold">Max Brewable</p>
             <p className="text-lg font-black text-amber-400 font-mono">
               {maxCapacity.maxCups} <span className="text-xs font-normal text-stone-300">cups</span>
             </p>
           </div>
           <div className="border-l border-stone-800 pl-3">
-            <span className="text-[10px] text-stone-400 uppercase font-semibold block">Bottleneck</span>
+            <span className="text-[11px] tracking-wide text-stone-400 uppercase font-semibold block">Bottleneck</span>
             <span className="text-xs font-semibold text-amber-300 flex items-center gap-1">
               <AlertCircle className="w-3 h-3 text-amber-400 inline" />
               {maxCapacity.bottleneckName.split(' ')[0]}
@@ -70,14 +70,14 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
 
       {/* Temporary purchase toast feedback */}
       {purchaseFeedback && (
-        <div className="mt-3 p-2.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-200 text-xs font-medium flex items-center gap-2 animate-fadeIn">
+        <div role="status" aria-live="polite" className="mt-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm font-medium text-amber-100 animate-fadeIn">
           <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
           <span>{purchaseFeedback}</span>
         </div>
       )}
 
       {/* Ingredient Stock Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 mt-5">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 mt-5">
         {ingredientsList.map(([key, item]) => {
           const isBottleneck = maxCapacity.bottleneckIngredient === key;
           const isMilkShock = key === 'milk' && gameState.shock.triggered;
@@ -168,6 +168,8 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                     return (
                       <button
                         key={inc}
+                        type="button"
+                        aria-label={`Restock ${item.name}: add ${inc} ${item.unit} for ₹${cost.toFixed(2)}`}
                         onClick={() => handleBuy(key, inc)}
                         disabled={!canAfford}
                         className={`py-1.5 px-1 rounded-md text-xs font-medium text-center transition-all flex flex-col items-center justify-center ${
@@ -178,13 +180,15 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                         title={`Cost: ₹${cost.toFixed(2)}`}
                       >
                         <span className="font-bold">+{inc}</span>
-                        <span className="text-[9px] text-stone-400 font-mono">₹{cost.toFixed(0)}</span>
+                        <span className="text-[10px] text-stone-400 font-mono">₹{cost.toFixed(0)}</span>
                       </button>
                     );
                   })}
 
                   {/* Max Button */}
                   <button
+                    type="button"
+                    aria-label={`Restock ${item.name} with the maximum affordable quantity: ${maxAffordable} ${item.unit}`}
                     onClick={() => {
                       if (maxAffordable > 0) handleBuy(key, maxAffordable);
                     }}

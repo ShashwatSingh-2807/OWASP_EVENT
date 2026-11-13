@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DailyReport, GameState } from '../types/game';
 import { WEATHER_PROFILES, MENU_ITEMS } from '../lib/constants';
 import {
@@ -30,6 +30,17 @@ export default function DailyReportModal({
   onClose,
   onTriggerShock
 }: DailyReportModalProps) {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen || !report) return null;
 
   const isProfitable = report.netProfit >= 0;
@@ -38,7 +49,7 @@ export default function DailyReportModal({
   const hasLostDemand = report.cupsLostToStockout > 0;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-stone-950/85 backdrop-blur-md overflow-y-auto animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-labelledby="daily-report-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-stone-950/85 backdrop-blur-md overflow-y-auto animate-fadeIn">
       <div className="relative w-full max-w-3xl bg-gradient-to-b from-stone-900 via-stone-950 to-amber-950/40 border-2 border-amber-500/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-8 max-h-[90vh] overflow-y-auto">
         {/* Step 02 Judge Badge */}
         <div className="flex items-center justify-between pb-4 border-b border-stone-800 flex-wrap gap-2">
@@ -47,9 +58,9 @@ export default function DailyReportModal({
               <Sparkles className="w-3.5 h-3.5" />
               JUDGE DEMO STEP 02 VERIFIED
             </span>
-            <span className="text-xs text-stone-400 font-medium">
+            <h3 id="daily-report-heading" className="text-xs font-semibold text-stone-200 sm:text-sm">
               Daily P&L & Feedback Audit
-            </span>
+            </h3>
           </div>
 
           <div className="flex items-center gap-1.5 text-xs text-amber-300 font-mono">
@@ -185,6 +196,7 @@ export default function DailyReportModal({
           {/* Step 03 Quick Trigger Button for Judges */}
           {!gameState.shock.triggered && (
             <button
+              type="button"
               onClick={onTriggerShock}
               className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 active:scale-95 text-white font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-red-400"
             >
@@ -195,6 +207,7 @@ export default function DailyReportModal({
 
           {/* Continue Planning Next Day */}
           <button
+            type="button"
             onClick={onClose}
             className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 active:scale-95 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all border border-amber-400/40 ml-auto"
           >

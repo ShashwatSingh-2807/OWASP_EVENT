@@ -22,7 +22,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
   const displayRating = latestReport ? latestReport.customerRating : 4.2;
 
   return (
-    <header className="relative bg-gradient-to-b from-amber-900 via-amber-950 to-stone-950 text-white pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b-4 border-amber-600/60 shadow-2xl overflow-hidden">
+    <header className="relative bg-gradient-to-b from-amber-900 via-amber-950 to-stone-950 text-white pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-amber-700/50 shadow-xl shadow-black/20 overflow-hidden">
       {/* Decorative ambient background blur */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -30,12 +30,14 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 relative z-10">
         {/* Brand identity: Logo + Title */}
         <div className="flex items-center gap-4 sm:gap-6 text-center sm:text-left">
-          <div
+          <button
+            type="button"
             onClick={onOpenMenu}
-            className="cursor-pointer group relative flex-shrink-0 transition-transform hover:scale-105 active:scale-95"
-            title="Click to view the authentic Bawaal Chaiwala menu card!"
+            aria-label="Open the official Bawaal Chaiwala menu"
+            className="group relative flex-shrink-0 rounded-full text-left transition-transform hover:scale-[1.03] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-4 focus-visible:ring-offset-amber-950"
+            title="Open the authentic Bawaal Chaiwala menu"
           >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-3 border-amber-500 shadow-xl ring-4 ring-amber-700/50 relative">
+            <span className="relative block h-20 w-20 overflow-hidden rounded-full border-2 border-amber-400 shadow-lg ring-4 ring-amber-700/40 sm:h-24 sm:w-24">
               <Image
                 src="/bawaal-logo.jpg"
                 alt="Bawaal Chaiwala Logo"
@@ -44,11 +46,11 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
                 className="object-cover group-hover:brightness-110 transition-all"
                 priority
               />
-            </div>
+            </span>
             <span className="absolute -bottom-1 -right-1 bg-amber-500 text-stone-950 font-bold text-[10px] uppercase px-1.5 py-0.5 rounded-full shadow-md">
               Tapri
             </span>
-          </div>
+          </button>
 
           <div>
             <div className="flex items-center gap-2 justify-center sm:justify-start">

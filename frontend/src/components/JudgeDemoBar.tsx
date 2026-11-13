@@ -2,7 +2,16 @@
 
 import React from 'react';
 import { GameState } from '../types/game';
-import { Sparkles, CheckCircle2, AlertTriangle, FileText, UtensilsCrossed, ArrowRight, Play, RotateCcw } from 'lucide-react';
+import {
+  Sparkles,
+  CheckCircle2,
+  AlertTriangle,
+  FileText,
+  UtensilsCrossed,
+  ArrowRight,
+  Play,
+  RotateCcw
+} from 'lucide-react';
 
 interface JudgeDemoBarProps {
   gameState: GameState;
@@ -28,102 +37,125 @@ export default function JudgeDemoBar({
   const shockResolved = gameState.shock.resolved;
 
   return (
-    <div className="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 text-white border-b border-amber-600/40 shadow-xl px-4 py-3 sticky top-0 z-40 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
-        {/* Left Badge: Challenge & Passcode */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono font-semibold text-xs tracking-wide">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-            PASSCODE VERIFIED ✓
-          </span>
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold text-xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            MINUTE 40 TWIST UNLOCKED
-          </span>
-          <span className="text-stone-400 hidden xl:inline font-medium">
-            Judge Evaluation & Verification Path:
-          </span>
+    <div className="sticky top-0 z-40 border-b border-stone-700/70 bg-stone-950/90 px-3 py-2 text-white shadow-lg shadow-black/20 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl flex-col gap-2.5 xl:flex-row xl:items-center xl:justify-between">
+        <div className="flex min-w-0 items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-bold tracking-wide text-emerald-300">
+              <CheckCircle2 className="h-3.5 w-3.5" />
+              PASSCODE VERIFIED
+            </span>
+            <span className="hidden items-center gap-1.5 text-xs text-stone-400 sm:inline-flex">
+              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+              Minute 40 twist unlocked
+            </span>
+          </div>
+          <div className="flex shrink-0 items-center gap-1.5 xl:hidden">
+            <button
+              type="button"
+              onClick={onOpenMenu}
+              aria-label="Open Bawaal menu"
+              className="rounded-lg border border-stone-700 bg-stone-900 p-2 text-amber-300 transition-colors hover:bg-stone-800"
+            >
+              <UtensilsCrossed className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={onOpenDocs}
+              aria-label="Open project documentation"
+              className="rounded-lg border border-stone-700 bg-stone-900 p-2 text-sky-300 transition-colors hover:bg-stone-800"
+            >
+              <FileText className="h-4 w-4" />
+            </button>
+            <button
+              type="button"
+              onClick={onResetGame}
+              aria-label="Reset game"
+              title="Reset Game to Day 1"
+              className="rounded-lg border border-stone-700 bg-stone-900 p-2 text-stone-400 transition-colors hover:bg-stone-800 hover:text-stone-100"
+            >
+              <RotateCcw className="h-4 w-4" />
+            </button>
+          </div>
         </div>
 
-        {/* Center: The 3 Mandatory Verification Steps */}
-        <div className="flex items-center gap-2 flex-wrap justify-center">
-          {/* STEP 01 */}
+        <nav aria-label="Judge verification steps" className="flex w-full items-center gap-1.5 overflow-x-auto pb-0.5 xl:w-auto xl:justify-center">
           <button
+            type="button"
             onClick={onSimulateStep01}
             disabled={gameState.gameStatus === 'simulating'}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 active:scale-95 text-white font-medium text-xs shadow-md transition-all border border-amber-400/30 disabled:opacity-50"
+            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-amber-400/30 bg-amber-500 px-3 py-2 text-xs font-bold text-stone-950 shadow-sm transition-colors hover:bg-amber-400 disabled:opacity-50"
             title="Step 01: Buy stock and simulate one day of sales"
           >
-            <Play className="w-3.5 h-3.5 text-amber-200 fill-amber-200" />
-            <span>STEP 01: Simulate Sales</span>
+            <Play className="h-3.5 w-3.5 fill-current" />
+            <span>01 · Simulate sales</span>
           </button>
 
-          <ArrowRight className="w-3.5 h-3.5 text-stone-500 hidden sm:block" />
+          <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-stone-600" />
 
-          {/* STEP 02 */}
           <button
+            type="button"
             onClick={onOpenReportStep02}
             disabled={!hasReports}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium text-xs shadow-md transition-all border ${
+            className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
               hasReports
-                ? 'bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-400/40 active:scale-95 ring-1 ring-emerald-400/50'
-                : 'bg-stone-800 text-stone-400 border-stone-700 cursor-not-allowed'
+                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20'
+                : 'cursor-not-allowed border-stone-800 bg-stone-900 text-stone-500'
             }`}
             title="Step 02: Show the revenue, costs and profit report"
           >
-            <CheckCircle2 className={`w-3.5 h-3.5 ${hasReports ? 'text-emerald-200' : 'text-stone-500'}`} />
-            <span>STEP 02: P&L Report {hasReports ? `(Day ${gameState.reports[gameState.reports.length - 1].day})` : ''}</span>
+            <CheckCircle2 className="h-3.5 w-3.5" />
+            <span>02 · P&L report</span>
+            {hasReports && <span className="text-[10px] text-emerald-400">Day {gameState.reports[gameState.reports.length - 1].day}</span>}
           </button>
 
-          <ArrowRight className="w-3.5 h-3.5 text-stone-500 hidden sm:block" />
+          <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-stone-600" />
 
-          {/* STEP 03 */}
           <button
+            type="button"
             onClick={onTriggerShockStep03}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium text-xs shadow-md transition-all border animate-pulse ${
+            className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
               shockResolved
-                ? 'bg-purple-800 text-purple-200 border-purple-500'
+                ? 'border-violet-500/30 bg-violet-500/10 text-violet-300 hover:bg-violet-500/20'
                 : shockTriggered
-                ? 'bg-red-600 text-white border-red-400 ring-2 ring-red-400'
-                : 'bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white border-red-400 active:scale-95'
+                ? 'border-red-400/50 bg-red-500/15 text-red-200 hover:bg-red-500/25'
+                : 'border-red-500/40 bg-red-600 text-white hover:bg-red-500'
             }`}
             title="Step 03: Trigger the milk price shock and demonstrate decision options"
           >
-            <AlertTriangle className="w-3.5 h-3.5 text-amber-200" />
-            <span>
-              STEP 03: {shockResolved ? 'Milk Shock (Resolved ✓)' : shockTriggered ? 'Decide Shock!' : 'Trigger Milk Shock'}
-            </span>
+            <AlertTriangle className="h-3.5 w-3.5" />
+            <span>03 · {shockResolved ? 'Shock resolved' : shockTriggered ? 'Decide shock' : 'Milk shock'}</span>
           </button>
-        </div>
+        </nav>
 
-        {/* Right: Quick Docs & Menu buttons */}
-        <div className="flex items-center gap-2">
+        <div className="hidden shrink-0 items-center gap-1.5 xl:flex">
           <button
+            type="button"
             onClick={onOpenMenu}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-amber-300 border border-stone-700 text-xs font-medium transition-colors"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-xs font-medium text-amber-200 transition-colors hover:border-amber-500/40 hover:bg-stone-800"
           >
-            <UtensilsCrossed className="w-3.5 h-3.5 text-amber-400" />
-            <span>Bawaal Menu</span>
+            <UtensilsCrossed className="h-3.5 w-3.5 text-amber-400" />
+            Bawaal menu
           </button>
-
           <button
+            type="button"
             onClick={onOpenDocs}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-sky-300 border border-stone-700 text-xs font-medium transition-colors"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-xs font-medium text-sky-200 transition-colors hover:border-sky-500/40 hover:bg-stone-800"
           >
-            <FileText className="w-3.5 h-3.5 text-sky-400" />
-            <span>Docs</span>
+            <FileText className="h-3.5 w-3.5 text-sky-400" />
+            Docs
           </button>
-
           <button
+            type="button"
             onClick={onResetGame}
-            className="p-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-400 hover:text-stone-200 border border-stone-700 text-xs transition-colors"
+            aria-label="Reset game"
             title="Reset Game to Day 1"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-stone-700 bg-stone-900 text-stone-400 transition-colors hover:bg-stone-800 hover:text-stone-100"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw className="h-4 w-4" />
           </button>
         </div>
       </div>
     </div>
   );
 }
-
