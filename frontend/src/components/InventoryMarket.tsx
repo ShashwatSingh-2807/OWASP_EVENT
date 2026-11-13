@@ -33,7 +33,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
   const ingredientsList = Object.entries(gameState.inventory) as [keyof InventoryMap, typeof gameState.inventory['tea_leaves']][];
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#2B1D17] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title & Live Capacity Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#493027] gap-3">
         <div className="flex items-center gap-2.5">
@@ -107,14 +107,14 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
             >
               {/* Bottleneck Badge */}
               {isBottleneck && (
-                <div className="absolute -top-2.5 right-3 bg-[#A87557] text-[#F0DFCE] text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-md flex items-center gap-1">
+                <div className="absolute -top-2.5 right-3 bg-[#D0A98B] text-[#211713] text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-md flex items-center gap-1">
                   <AlertCircle className="w-3 h-3" /> Bottleneck Stock
                 </div>
               )}
 
               {/* Milk Shock Badge */}
               {isMilkShock && (
-                <div className="absolute -top-2.5 left-3 bg-[#A87557] text-[#F0DFCE] text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-md flex items-center gap-1 animate-pulse">
+                <div className="absolute -top-2.5 left-3 bg-[#D0A98B] text-[#211713] text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-md flex items-center gap-1 animate-pulse">
                   <TrendingUp className="w-3 h-3" /> Price Doubled!
                 </div>
               )}
