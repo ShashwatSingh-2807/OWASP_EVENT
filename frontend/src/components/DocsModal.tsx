@@ -28,7 +28,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="docs-modal-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/60 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-5xl bg-white border-2 border-sky-300/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-6 max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-5xl bg-white border border-sky-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-900 my-6 max-h-[92vh] flex flex-col">
         {/* Modal Header */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-200">
           <div className="flex items-center gap-2.5">
@@ -49,7 +49,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
             type="button"
             aria-label="Close documentation"
             onClick={onClose}
-            className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -69,7 +69,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
               className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap transition-all font-mono ${
                 activeTab === tab
                   ? 'bg-sky-600 text-slate-950 font-bold shadow-md'
-                  : 'bg-slate-100/80 text-slate-700 hover:bg-stone-750 hover:text-white'
+                  : 'bg-slate-100/80 text-slate-700 hover:bg-slate-200 hover:text-slate-900'
               }`}
             >
               {tab}.md
