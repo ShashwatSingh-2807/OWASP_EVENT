@@ -22,7 +22,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
   const displayRating = latestReport ? latestReport.customerRating : 4.2;
 
   return (
-    <header className="relative bg-gradient-to-br from-[#493027] via-[#2B1D17] to-[#211713] text-[#F0DFCE] pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-[#493027]/50 shadow-xl shadow-black/20 overflow-hidden">
+    <header className="relative bg-gradient-to-br from-[#493027] via-[#493027] to-[#211713] text-[#F0DFCE] pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-[#493027]/50 shadow-xl shadow-black/20 overflow-hidden">
       {/* Decorative ambient background blur */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
@@ -54,7 +54,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
 
           <div>
             <div className="flex items-center gap-2 justify-center sm:justify-start">
-              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#76503B] via-[#A87557] to-[#493027] font-serif">
+              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#F0DFCE] via-[#D0A98B] to-[#F0DFCE] font-serif">
                 BAWAAL CHAIWALA
               </h1>
               <span className="text-xs px-2 py-0.5 rounded bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/40 font-mono">
