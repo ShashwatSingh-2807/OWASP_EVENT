@@ -49,7 +49,7 @@ export default function DailyReportModal({
   const hasLostDemand = report.cupsLostToStockout > 0;
 
   return (
-    <div role="dialog" aria-modal="true" aria-labelledby="daily-report-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#120C09]/80 backdrop-blur-lg overflow-y-auto animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-labelledby="daily-report-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#211713]/80 backdrop-blur-lg overflow-y-auto animate-fadeIn">
       <div className="relative w-full max-w-3xl bg-gradient-to-b from-[#493027] via-[#493027] to-[#211713] border border-[#493027] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-8 max-h-[90vh] overflow-y-auto">
         {/* Step 02 Judge Badge */}
         <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
@@ -95,7 +95,7 @@ export default function DailyReportModal({
         {/* Financial Breakdown Grid (STEP 02 REQUIREMENTS) */}
         <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
           {/* Revenue */}
-          <div className="bg-[#38261E]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Gross Revenue</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono">
               ₹{report.grossRevenue.toFixed(2)}
@@ -106,7 +106,7 @@ export default function DailyReportModal({
           </div>
 
           {/* Ingredient Costs */}
-          <div className="bg-[#38261E]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Ingredient Cost (COGS)</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono">
               -₹{report.ingredientCost.toFixed(2)}
@@ -117,7 +117,7 @@ export default function DailyReportModal({
           </div>
 
           {/* Fixed Overhead */}
-          <div className="bg-[#38261E]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Tapri Overhead</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono">
               -₹{report.overheadCost.toFixed(2)}
@@ -128,7 +128,7 @@ export default function DailyReportModal({
           </div>
 
           {/* Customer Rating */}
-          <div className="bg-[#38261E]/90 border border-[#493027] rounded-xl p-3 text-center">
+          <div className="bg-[#493027]/90 border border-[#493027] rounded-xl p-3 text-center">
             <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Customer Rating</span>
             <span className="text-lg sm:text-xl font-bold text-[#F0DFCE] font-mono flex items-center justify-center gap-1">
               <Star className="w-4 h-4 fill-amber-400 text-[#F0DFCE]" />
@@ -166,7 +166,7 @@ export default function DailyReportModal({
             {report.feedbacks.map((fb) => (
               <div
                 key={fb.id}
-                className="bg-[#38261E]/85 border border-[#493027]/80 rounded-xl p-3 flex items-start gap-3"
+                className="bg-[#493027]/85 border border-[#493027]/80 rounded-xl p-3 flex items-start gap-3"
               >
                 <div className="text-2xl p-1.5 rounded-lg bg-[#493027] border border-[#493027] shrink-0">
                   {fb.avatar}
@@ -198,7 +198,7 @@ export default function DailyReportModal({
             <button
               type="button"
               onClick={onTriggerShock}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#A87557] to-[#A87557] hover:from-[#A87557] hover:to-[#A87557] active:scale-95 text-[#F0DFCE] font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-[#76503B]"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#F0DFCE] font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-[#76503B]"
             >
               <Zap className="w-4 h-4 text-[#F0DFCE]" />
               <span>Proceed to STEP 03: Trigger Milk Shock!</span>
