@@ -84,7 +84,7 @@ export default function JudgeDemoBar({
             type="button"
             onClick={onSimulateStep01}
             disabled={gameState.gameStatus === 'simulating'}
-            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-[#76503B]/30 bg-[#A87557] px-3 py-2 text-xs font-bold text-[#F0DFCE] shadow-sm transition-colors hover:bg-[#D0A98B] disabled:opacity-50"
+            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-[#76503B]/30 bg-[#D0A98B] px-3 py-2 text-xs font-bold text-[#211713] shadow-sm transition-colors hover:bg-[#F0DFCE] disabled:opacity-50"
             title="Step 01: Buy stock and simulate one day of sales"
           >
             <Play className="h-3.5 w-3.5 fill-current" />
