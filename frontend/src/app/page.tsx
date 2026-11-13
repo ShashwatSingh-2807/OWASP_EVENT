@@ -197,7 +197,7 @@ export default function ChaiStallTycoonApp() {
       {/* 3. Main Stall Dashboard Container */}
       <main id="main-content" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 outline-none">
         {/* Quick Demo Helpers for Mentors / Judges */}
-        <div className="bg-[#493027]/60 border border-[#76503B]/20 rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-[#D0A98B] flex-wrap gap-2">
+        <div className="bg-[#493027]/60 border border-[#A87557] rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-[#D0A98B] flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-[#F0DFCE]">Quick Test Utilities:</span>
             <span>Deterministic simulation • Zero negative inventory guaranteed • Browser-first</span>
@@ -205,13 +205,13 @@ export default function ChaiStallTycoonApp() {
           <div className="flex items-center gap-2">
             <button
               onClick={handleLoadSampleData}
-              className="px-2.5 py-1 rounded bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B] text-[11px] font-mono transition-colors"
+              className="px-2.5 py-1 rounded bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#A87557] text-[11px] font-mono transition-colors"
             >
               Load Sample 2-Day Data + Shock
             </button>
             <button
               onClick={() => setIsDocsModalOpen(true)}
-              className="px-2.5 py-1 rounded bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B] text-[11px] font-mono transition-colors"
+              className="px-2.5 py-1 rounded bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#A87557] text-[11px] font-mono transition-colors"
             >
               View Slide Docs (7 Files)
             </button>
@@ -239,7 +239,7 @@ export default function ChaiStallTycoonApp() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-[#493027] bg-[#493027] py-6 px-4 text-center text-xs text-[#D0A98B]">
+      <footer className="mt-auto border-t border-[#A87557] bg-[#493027] py-6 px-4 text-center text-xs text-[#D0A98B]">
         <p className="font-medium text-[#D0A98B]">
           Chai Stall Tycoon — Bawaal Chaiwala • Built for VIBESPRINT Hackathon
         </p>
