@@ -66,48 +66,53 @@ export default function PricingStrategy({
             Select Stall Speciality Menu:
           </label>
 
-          {(Object.keys(MENU_ITEMS) as MenuType[]).map((menuKey) => {
-            const item = MENU_ITEMS[menuKey];
-            const isSelected = gameState.activeMenu === menuKey;
-            const isMilkFree = item.milkFree;
-            const itemCost = calculateUnitIngredientCost(gameState.inventory, item);
+          <div role="group" aria-label="Select stall speciality menu" className="space-y-3">
+            {(Object.keys(MENU_ITEMS) as MenuType[]).map((menuKey) => {
+              const item = MENU_ITEMS[menuKey];
+              const isSelected = gameState.activeMenu === menuKey;
+              const isMilkFree = item.milkFree;
+              const itemCost = calculateUnitIngredientCost(gameState.inventory, item);
 
-            return (
-              <div
-                key={menuKey}
-                onClick={() => onSelectMenu(menuKey)}
-                className={`cursor-pointer rounded-xl p-3.5 border transition-all relative ${
-                  isSelected
-                    ? 'bg-amber-950/50 border-amber-500 shadow-md ring-1 ring-amber-500/50'
-                    : 'bg-stone-950/60 border-stone-800 hover:border-stone-700 hover:bg-stone-950'
-                }`}
-              >
-                {isMilkFree && (
-                  <span className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold border border-emerald-500/30 flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3" /> ZERO MILK
-                  </span>
-                )}
+              return (
+                <button
+                  key={menuKey}
+                  type="button"
+                  onClick={() => onSelectMenu(menuKey)}
+                  aria-pressed={isSelected}
+                  className={`relative block w-full rounded-xl border p-4 text-left transition-all duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-950 ${
+                    isSelected
+                      ? 'border-amber-400/80 bg-amber-500/10 shadow-lg shadow-amber-950/30 ring-1 ring-amber-400/30'
+                      : 'border-stone-700/80 bg-stone-950/50 hover:border-stone-500 hover:bg-stone-900'
+                  }`}
+                >
+                  {isMilkFree && (
+                    <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-[11px] font-bold text-emerald-300">
+                      <ShieldCheck className="h-3 w-3" /> ZERO MILK
+                    </span>
+                  )}
 
-                <div className="flex items-start justify-between pr-14">
-                  <div>
-                    <h3 className={`font-bold text-sm ${isSelected ? 'text-amber-200' : 'text-stone-200'}`}>
+                  <span className="block pr-20 sm:pr-24">
+                    <span className={`block text-sm font-bold ${isSelected ? 'text-amber-200' : 'text-stone-100'}`}>
                       {item.name}
-                    </h3>
-                    <p className="text-xs text-stone-400 mt-0.5 line-clamp-1">{item.tagline}</p>
-                  </div>
-                </div>
+                    </span>
+                    <span className="mt-1 block text-xs leading-relaxed text-stone-400">{item.tagline}</span>
+                  </span>
 
-                <div className="mt-2.5 flex items-center justify-between text-xs pt-2 border-t border-stone-800/80">
-                  <span className="text-stone-400">
-                    Ingredient Cost: <span className="text-stone-200 font-mono font-semibold">₹{itemCost.toFixed(2)}</span>
+                  <span className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-stone-800 pt-3 text-xs">
+                    <span className="text-stone-400">
+                      Ingredient cost <strong className="font-mono font-semibold text-stone-100">₹{itemCost.toFixed(2)}</strong>
+                    </span>
+                    <span className="font-mono text-amber-300">Default ₹{item.defaultPrice}</span>
                   </span>
-                  <span className="text-amber-300 font-mono text-[11px]">
-                    Default: ₹{item.defaultPrice}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+                  {isSelected && (
+                    <span className="mt-2 inline-flex items-center gap-1.5 text-[11px] font-semibold text-amber-300">
+                      <span className="h-1.5 w-1.5 rounded-full bg-amber-400" /> Currently selected
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Right Column: Interactive Price Slider & Live Margin Visualizer (7 cols) */}
@@ -132,7 +137,10 @@ export default function PricingStrategy({
             {/* Slider */}
             <div className="mt-4">
               <input
+                id="chai-price-slider"
                 type="range"
+                aria-label="Chai price per cup"
+                aria-valuetext={`₹${gameState.chaiPrice} per cup`}
                 min="8"
                 max="45"
                 step="1"
@@ -154,6 +162,8 @@ export default function PricingStrategy({
               {presets.map((p) => (
                 <button
                   key={p}
+                  type="button"
+                  aria-pressed={gameState.chaiPrice === p}
                   onClick={() => onSetPrice(p)}
                   className={`px-2.5 py-1 rounded text-xs font-mono font-bold transition-colors ${
                     gameState.chaiPrice === p
@@ -201,6 +211,7 @@ export default function PricingStrategy({
           {/* Action Trigger: Open Stall & Start Rush Hour */}
           <div className="mt-5 pt-4 border-t border-stone-800">
             <button
+              type="button"
               onClick={onStartSimulation}
               disabled={gameState.gameStatus === 'simulating'}
               className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 hover:from-amber-500 hover:to-orange-500 active:scale-98 text-white font-bold text-base sm:text-lg shadow-xl shadow-amber-900/30 flex items-center justify-center gap-3 transition-all border border-amber-400/40"
