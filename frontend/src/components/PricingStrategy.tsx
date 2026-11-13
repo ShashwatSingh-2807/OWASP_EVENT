@@ -36,7 +36,7 @@ export default function PricingStrategy({
   const presets = [10, 12, 15, 20, 25, 30];
 
   return (
-    <section className="bg-stone-900/90 border border-amber-600/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
+    <section className="bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-700/80 rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title */}
       <div className="flex items-center justify-between pb-4 border-b border-stone-800 flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
@@ -121,11 +121,11 @@ export default function PricingStrategy({
             {/* Price Header with Slider */}
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-xs uppercase tracking-wider font-bold text-stone-300 block">
+                <label htmlFor="chai-price-slider" className="text-xs uppercase tracking-wider font-bold text-stone-200 block">
                   Chai Price Per Cup
                 </span>
-                <p className="text-xs text-stone-400">Sweet spot is ₹12 - ₹20</p>
-              </div>
+                <span className="mt-1 block text-xs text-stone-400">Sweet spot is ₹12 - ₹20</span>
+              </label>
               <div className="text-right">
                 <span className="text-3xl font-black text-amber-300 font-mono flex items-center justify-end">
                   <IndianRupee className="w-6 h-6 inline -mr-1" />
@@ -177,7 +177,7 @@ export default function PricingStrategy({
             </div>
 
             {/* Live Financial Breakdown Bar */}
-            <div className="grid grid-cols-3 gap-2.5 mt-5 bg-stone-900/90 rounded-xl p-3 border border-stone-800">
+            <div aria-label="Live price breakdown" className="grid grid-cols-3 gap-2.5 mt-5 bg-stone-900/90 rounded-xl p-3.5 border border-stone-800">
               <div className="text-center border-r border-stone-800">
                 <span className="text-[10px] text-stone-400 uppercase font-semibold block">Unit Cost (COGS)</span>
                 <span className="text-base font-bold text-red-300 font-mono">₹{unitCost.toFixed(2)}</span>
