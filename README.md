@@ -42,8 +42,6 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
 ### Run Automated Verification Test
 You can also run the deterministic mathematical verification test via CLI:
 ```bash
