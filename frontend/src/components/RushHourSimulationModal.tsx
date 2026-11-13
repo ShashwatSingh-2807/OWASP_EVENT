@@ -76,7 +76,7 @@ export default function RushHourSimulationModal({
   const weather = WEATHER_PROFILES[finalReport.weather];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/85 backdrop-blur-md animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-labelledby="simulation-heading" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/85 backdrop-blur-md animate-fadeIn">
       <div className="relative w-full max-w-2xl bg-gradient-to-b from-stone-900 to-amber-950 border-2 border-amber-500/60 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden text-white">
         {/* Decorative Steam / Glow Background */}
         <div className="absolute top-0 right-10 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -88,7 +88,7 @@ export default function RushHourSimulationModal({
               <Flame className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl font-black text-amber-100 font-serif">
+              <h3 id="simulation-heading" className="text-xl sm:text-2xl font-black text-amber-100 font-serif">
                 Simulating Day {finalReport.day} Sales
               </h3>
               <p className="text-xs text-stone-400">
@@ -98,6 +98,7 @@ export default function RushHourSimulationModal({
           </div>
 
           <button
+            type="button"
             onClick={onFinish}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 border border-stone-700 text-xs font-semibold transition-all active:scale-95"
             title="Skip directly to the Day Report"
@@ -146,7 +147,14 @@ export default function RushHourSimulationModal({
             <span>Stall Progress</span>
             <span className="font-mono">{progress}% Complete</span>
           </div>
-          <div className="w-full bg-stone-800 h-3 rounded-full overflow-hidden p-0.5 border border-stone-700">
+          <div
+            role="progressbar"
+            aria-label="Sales simulation progress"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={progress}
+            className="w-full bg-stone-800 h-3 rounded-full overflow-hidden p-0.5 border border-stone-700"
+          >
             <div
               className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-400 h-full rounded-full transition-all duration-75"
               style={{ width: `${progress}%` }}
