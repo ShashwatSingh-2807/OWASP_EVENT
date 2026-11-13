@@ -198,7 +198,7 @@ export default function DailyReportModal({
             <button
               type="button"
               onClick={onTriggerShock}
-              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#F0DFCE] font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-[#76503B]"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#211713] font-bold text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2 transition-all border border-[#76503B]"
             >
               <Zap className="w-4 h-4 text-[#F0DFCE]" />
               <span>Proceed to STEP 03: Trigger Milk Shock!</span>
@@ -209,7 +209,7 @@ export default function DailyReportModal({
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#A87557] hover:bg-[#D0A98B] active:scale-95 text-[#F0DFCE] font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all border border-[#76503B]/40 ml-auto"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#76503B] hover:bg-[#A87557] active:scale-95 text-[#F0DFCE] font-bold text-sm shadow-md flex items-center justify-center gap-2 transition-all border border-[#76503B]/40 ml-auto"
           >
             <ShoppingBag className="w-4 h-4" />
             <span>Go to Day {gameState.day} Planning & Market</span>
