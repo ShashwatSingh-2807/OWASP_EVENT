@@ -50,7 +50,7 @@ export default function MilkShockModal({
 
   return (
     <div role="dialog" aria-modal="true" aria-label="Minute 40 milk supply shock decision" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/60 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-gradient-to-b from-white via-slate-50 to-rose-50/40 border border-red-200/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-6 max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-gradient-to-b from-white via-slate-50 to-rose-50/40 border border-red-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-900 my-6 max-h-[92vh] overflow-y-auto">
         {/* Step 03 & Twist Badge */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-200 flex-wrap gap-2">
           <div className="flex items-center gap-2">
@@ -79,7 +79,7 @@ export default function MilkShockModal({
                 <span className="text-[11px] font-mono font-bold text-red-700 uppercase tracking-widest block">
                   Breaking Market Crisis
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-white font-serif tracking-tight mt-0.5">
+                <h3 className="text-xl sm:text-2xl font-black text-red-900 font-serif tracking-tight mt-0.5">
                   Milk Wholesale Costs Double Overnight!
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 mt-1 max-w-xl leading-relaxed">
@@ -196,7 +196,7 @@ export default function MilkShockModal({
                 type="button"
                 onClick={handleConfirm}
                 disabled={!selected}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-sky-600 hover:from-sky-600 hover:to-sky-600 active:scale-95 text-white font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed border border-sky-300/40"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-700 hover:to-blue-700 active:scale-95 text-white font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed border border-sky-300/40"
               >
                 <span>Confirm & Apply Strategy</span>
                 <ArrowRight className="w-4 h-4" />
