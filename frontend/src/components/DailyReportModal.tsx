@@ -50,7 +50,7 @@ export default function DailyReportModal({
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="daily-report-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/55 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-gradient-to-b from-white via-white to-sky-50 border-2 border-sky-300/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-8 max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-3xl bg-gradient-to-b from-white via-white to-sky-50 border border-sky-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-900 my-8 max-h-[90vh] overflow-y-auto">
         {/* Step 02 Judge Badge */}
         <div className="flex items-center justify-between pb-4 border-b border-slate-200 flex-wrap gap-2">
           <div className="flex items-center gap-2.5">
