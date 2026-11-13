@@ -205,7 +205,7 @@ export default function MilkShockModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#A87557] hover:bg-[#A87557] text-[#F0DFCE] font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] text-[#211713] font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all"
               >
                 <span>Continue to Stall Simulation</span>
                 <ArrowRight className="w-4 h-4" />
