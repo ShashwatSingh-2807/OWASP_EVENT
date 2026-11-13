@@ -214,7 +214,7 @@ export default function PricingStrategy({
               type="button"
               onClick={onStartSimulation}
               disabled={gameState.gameStatus === 'simulating'}
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-sky-600 via-sky-600 to-sky-600 hover:from-sky-600 hover:to-sky-600 active:scale-98 text-white font-bold text-base sm:text-lg shadow-xl shadow-sky-50/30 flex items-center justify-center gap-3 transition-all border border-sky-300/40"
+              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 hover:from-sky-700 hover:to-blue-700 active:scale-98 text-white font-bold text-base sm:text-lg shadow-xl shadow-sky-50/30 flex items-center justify-center gap-3 transition-all border border-sky-300/40"
             >
               <Play className="w-5 h-5 fill-white" />
               <span>Open Chai Stall & Start Day {gameState.day} Sales!</span>
