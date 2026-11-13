@@ -169,6 +169,12 @@ export default function ChaiStallTycoonApp() {
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col font-sans selection:bg-amber-500 selection:text-stone-950">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-amber-400 focus:px-4 focus:py-3 focus:font-bold focus:text-stone-950"
+      >
+        Skip to game dashboard
+      </a>
       {/* 1. Mandatory Judge Verification Demonstration Bar */}
       <JudgeDemoBar
         gameState={gameState}
@@ -188,7 +194,7 @@ export default function ChaiStallTycoonApp() {
       />
 
       {/* 3. Main Stall Dashboard Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
+      <main id="main-content" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 outline-none">
         {/* Quick Demo Helpers for Mentors / Judges */}
         <div className="bg-stone-900/60 border border-amber-600/20 rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-stone-400 flex-wrap gap-2">
           <div className="flex items-center gap-2">
