@@ -22,7 +22,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
   const displayRating = latestReport ? latestReport.customerRating : 4.2;
 
   return (
-    <header className="relative bg-gradient-to-br from-[#493027] via-[#493027] to-[#211713] text-[#F0DFCE] pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-[#493027]/50 shadow-xl shadow-[#211713]/30 overflow-hidden">
+    <header className="relative bg-gradient-to-br from-[#493027] via-[#493027] to-[#211713] text-[#F0DFCE] pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-[#A87557] shadow-xl shadow-[#211713]/30 overflow-hidden">
       {/* Decorative ambient background blur */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
@@ -34,10 +34,10 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
             type="button"
             onClick={onOpenMenu}
             aria-label="Open the official Bawaal Chaiwala menu"
-            className="group relative flex-shrink-0 rounded-full text-left transition-transform hover:scale-[1.03] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#493027] focus-visible:ring-offset-4 focus-visible:ring-offset-[#493027]"
+            className="group relative flex-shrink-0 rounded-full text-left transition-transform hover:scale-[1.03] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#D0A98B] focus-visible:ring-offset-4 focus-visible:ring-offset-[#211713]"
             title="Open the authentic Bawaal Chaiwala menu"
           >
-            <span className="relative block h-20 w-20 overflow-hidden rounded-full border-2 border-[#76503B] shadow-lg ring-4 ring-[#493027]/40 sm:h-24 sm:w-24">
+            <span className="relative block h-20 w-20 overflow-hidden rounded-full border-2 border-[#A87557] shadow-lg ring-4 ring-[#D0A98B] sm:h-24 sm:w-24">
               <Image
                 src="/bawaal-logo.jpg"
                 alt="Bawaal Chaiwala Logo"
@@ -57,7 +57,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
               <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#F0DFCE] via-[#D0A98B] to-[#F0DFCE] font-serif">
                 BAWAAL CHAIWALA
               </h1>
-              <span className="text-xs px-2 py-0.5 rounded bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/40 font-mono">
+              <span className="text-xs px-2 py-0.5 rounded bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557] font-mono">
                 v1.0 MVP
               </span>
             </div>
@@ -75,8 +75,8 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
         {/* Live Operational Metrics Ribbon */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 w-full lg:w-auto">
           {/* Metric 1: Day */}
-          <div className="bg-[#493027]/90 backdrop-blur border border-[#76503B]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
-            <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30">
+          <div className="bg-[#493027]/90 backdrop-blur border border-[#A87557] rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
+            <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557]">
               <Calendar className="w-5 h-5" />
             </div>
             <div>
@@ -86,8 +86,8 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
           </div>
 
           {/* Metric 2: Wallet Budget */}
-          <div className="bg-[#493027]/90 backdrop-blur border border-[#76503B]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
-            <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-[#F0DFCE] border border-[#493027]/30">
+          <div className="bg-[#493027]/90 backdrop-blur border border-[#A87557] rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
+            <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557]">
               <Wallet className="w-5 h-5" />
             </div>
             <div>
@@ -97,7 +97,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
           </div>
 
           {/* Metric 3: Weather & Demand */}
-          <div className="bg-[#493027]/90 backdrop-blur border border-[#493027]/30 rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
+          <div className="bg-[#493027]/90 backdrop-blur border border-[#A87557] rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3">
             <div className="p-2 sm:p-2.5 rounded-lg bg-[#A87557]/20 text-2xl">
               {weatherInfo.icon}
             </div>
@@ -115,8 +115,8 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
           {/* Metric 4: Customer Rating & Milk Warning */}
           <div className={`backdrop-blur border rounded-xl p-2.5 sm:p-3 shadow-lg flex items-center gap-3 ${
             isMilkShocked
-              ? 'bg-[#493027]/85 border-[#493027]/50 ring-1 ring-[#493027]/40'
-              : 'bg-[#493027]/90 border-[#76503B]/30'
+              ? 'bg-[#493027]/85 border-[#A87557] ring-1 ring-[#D0A98B]'
+              : 'bg-[#493027]/90 border-[#A87557]'
           }`}>
             <div className={`p-2 sm:p-2.5 rounded-lg ${
               isMilkShocked ? 'bg-[#A87557]/20 text-[#F0DFCE]' : 'bg-[#A87557]/20 text-[#F0DFCE]'
