@@ -97,7 +97,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
           return (
             <div
               key={key}
-              className={`relative bg-[#38261E]/85 border rounded-xl p-4 transition-all hover:border-[#76503B]/50 flex flex-col justify-between ${
+              className={`relative bg-[#493027]/85 border rounded-xl p-4 transition-all hover:border-[#76503B]/50 flex flex-col justify-between ${
                 isBottleneck
                   ? 'border-[#76503B]/70 shadow-[0_0_15px_rgba(245,158,11,0.15)] ring-1 ring-[#76503B]/40'
                   : isMilkShock
@@ -136,7 +136,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                 </div>
 
                 {/* Stock Level & Wholesale Cost */}
-                <div className="mt-3.5 grid grid-cols-2 gap-2 bg-[#38261E]/90 rounded-lg p-2.5 border border-[#493027]/80">
+                <div className="mt-3.5 grid grid-cols-2 gap-2 bg-[#493027]/90 rounded-lg p-2.5 border border-[#493027]/80">
                   <div>
                     <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">In Stock</span>
                     <span className="text-base font-bold text-[#F0DFCE] font-mono">
