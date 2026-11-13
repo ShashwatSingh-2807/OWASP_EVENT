@@ -196,7 +196,7 @@ export default function MilkShockModal({
                 type="button"
                 onClick={handleConfirm}
                 disabled={!selected}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#A87557] to-[#A87557] hover:from-[#76503B] hover:to-[#76503B] active:scale-95 text-[#F0DFCE] font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed border border-[#76503B]/40"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#211713] font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed border border-[#76503B]/40"
               >
                 <span>Confirm & Apply Strategy</span>
                 <ArrowRight className="w-4 h-4" />
