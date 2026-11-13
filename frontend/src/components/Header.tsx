@@ -22,7 +22,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
   const displayRating = latestReport ? latestReport.customerRating : 4.2;
 
   return (
-    <header className="relative bg-gradient-to-br from-[#493027] via-[#493027] to-[#211713] text-[#F0DFCE] pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-[#493027]/50 shadow-xl shadow-black/20 overflow-hidden">
+    <header className="relative bg-gradient-to-br from-[#493027] via-[#493027] to-[#211713] text-[#F0DFCE] pt-6 pb-8 px-4 sm:px-6 lg:px-8 border-b border-[#493027]/50 shadow-xl shadow-[#211713]/30 overflow-hidden">
       {/* Decorative ambient background blur */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
