@@ -77,7 +77,7 @@ export default function RushHourSimulationModal({
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="simulation-heading" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-lg animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-gradient-to-b from-white to-sky-50 border-2 border-sky-300/60 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden text-white">
+      <div className="relative w-full max-w-2xl bg-gradient-to-b from-white to-sky-50 border border-sky-200 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-900/10 overflow-hidden text-slate-900">
         {/* Decorative Steam / Glow Background */}
         <div className="absolute top-0 right-10 w-64 h-64 bg-sky-600/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -156,7 +156,7 @@ export default function RushHourSimulationModal({
             className="w-full bg-slate-100 h-3 rounded-full overflow-hidden p-0.5 border border-slate-300"
           >
             <div
-              className="bg-gradient-to-r from-sky-600 via-sky-600 to-sky-300 h-full rounded-full transition-all duration-75"
+              className="bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 h-full rounded-full transition-all duration-75"
               style={{ width: `${progress}%` }}
             />
           </div>
