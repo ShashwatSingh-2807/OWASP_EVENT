@@ -68,7 +68,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
               onClick={() => setActiveTab(tab)}
               className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap transition-all font-mono ${
                 activeTab === tab
-                  ? 'bg-[#A87557] text-[#F0DFCE] font-bold shadow-md'
+                  ? 'bg-[#D0A98B] text-[#211713] font-bold shadow-md'
                   : 'bg-[#493027]/80 text-[#F0DFCE] hover:bg-[#76503B] hover:text-[#F0DFCE]'
               }`}
             >
@@ -236,7 +236,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-[#A87557] hover:bg-[#A87557] text-[#F0DFCE] font-bold text-xs"
+            className="px-5 py-2 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] text-[#211713] font-bold text-xs"
           >
             Close Documentation
           </button>
