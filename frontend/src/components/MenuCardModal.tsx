@@ -141,7 +141,7 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-[#A87557] hover:bg-[#A87557] text-[#F0DFCE] font-bold text-xs"
+            className="px-5 py-2 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] text-[#211713] font-bold text-xs"
           >
             Close Menu Card
           </button>
