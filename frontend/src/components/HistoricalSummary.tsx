@@ -14,7 +14,7 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
 
   if (reports.length === 0) {
     return (
-      <div className="bg-[#493027]/60 border border-[#493027] rounded-2xl p-6 text-center text-[#D0A98B]">
+      <div className="bg-[#493027]/60 border border-[#A87557] rounded-2xl p-6 text-center text-[#D0A98B]">
         <History className="w-8 h-8 mx-auto text-[#D0A98B] mb-2" />
         <p className="text-sm font-semibold text-[#F0DFCE]">No Historical Days Recorded Yet</p>
         <p className="text-xs text-[#D0A98B] mt-1">
@@ -39,11 +39,11 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
   const avgRating = Math.round((totals.ratingSum / reports.length) * 10) / 10;
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border-2 border-[#A87557] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
       {/* Title */}
-      <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
+      <div className="flex items-center justify-between pb-4 border-b border-[#A87557] flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30">
+          <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557]">
             <History className="w-5 h-5" />
           </div>
           <div>
@@ -56,7 +56,7 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
           </div>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-[#493027] border border-[#493027] text-[#F0DFCE]">
+        <div className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-[#493027] border border-[#A87557] text-[#F0DFCE]">
           <Award className="w-4 h-4 text-[#F0DFCE]" />
           <span>{reports.length} Days in Operation</span>
         </div>
@@ -64,28 +64,28 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
 
       {/* Cumulative KPI Ribbon */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
-        <div className="bg-[#493027]/85 border border-[#493027] rounded-xl p-3 text-center">
+        <div className="bg-[#493027]/85 border border-[#A87557] rounded-xl p-3 text-center">
           <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Total Revenue</span>
           <span className="text-lg sm:text-xl font-black text-[#F0DFCE] font-mono">
             ₹{totals.revenue.toFixed(2)}
           </span>
         </div>
 
-        <div className="bg-[#493027]/85 border border-[#493027] rounded-xl p-3 text-center">
+        <div className="bg-[#493027]/85 border border-[#A87557] rounded-xl p-3 text-center">
           <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Total Costs</span>
           <span className="text-lg sm:text-xl font-black text-[#F0DFCE] font-mono">
             ₹{totals.costs.toFixed(2)}
           </span>
         </div>
 
-        <div className="bg-[#493027]/85 border border-[#493027] rounded-xl p-3 text-center">
+        <div className="bg-[#493027]/85 border border-[#A87557] rounded-xl p-3 text-center">
           <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Net Cumulative Profit</span>
           <span className={`text-lg sm:text-xl font-black font-mono ${totals.profit >= 0 ? 'text-[#F0DFCE]' : 'text-[#F0DFCE]'}`}>
             {totals.profit >= 0 ? `+₹${totals.profit.toFixed(2)}` : `-₹${Math.abs(totals.profit).toFixed(2)}`}
           </span>
         </div>
 
-        <div className="bg-[#493027]/85 border border-[#493027] rounded-xl p-3 text-center">
+        <div className="bg-[#493027]/85 border border-[#A87557] rounded-xl p-3 text-center">
           <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Total Cups Sold</span>
           <span className="text-lg sm:text-xl font-black text-[#F0DFCE] font-mono">
             {totals.cupsSold} <span className="text-xs font-normal text-[#D0A98B]">cups</span>
@@ -94,10 +94,10 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
       </div>
 
       {/* Daily Progression Table */}
-      <div className="mt-5 overflow-x-auto rounded-xl border border-[#493027]/80" role="region" aria-label="Daily performance history" tabIndex={0}>
+      <div className="mt-5 overflow-x-auto rounded-xl border border-[#A87557]" role="region" aria-label="Daily performance history" tabIndex={0}>
         <table className="w-full min-w-[820px] border-collapse text-left text-xs">
           <thead className="bg-[#493027]/90">
-            <tr className="border-b border-[#493027] text-[#D0A98B] uppercase tracking-wider font-semibold">
+            <tr className="border-b border-[#A87557] text-[#D0A98B] uppercase tracking-wider font-semibold">
               <th className="py-2.5 px-3">Day</th>
               <th className="py-2.5 px-3">Weather</th>
               <th className="py-2.5 px-3">Speciality</th>
