@@ -36,7 +36,7 @@ export default function PricingStrategy({
   const presets = [10, 12, 15, 20, 25, 30];
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
       {/* Title */}
       <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
@@ -167,7 +167,7 @@ export default function PricingStrategy({
                   onClick={() => onSetPrice(p)}
                   className={`px-2.5 py-1 rounded text-xs font-mono font-bold transition-colors ${
                     gameState.chaiPrice === p
-                      ? 'bg-[#A87557] text-[#F0DFCE]'
+                      ? 'bg-[#76503B] text-[#F0DFCE]'
                       : 'bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B]'
                   }`}
                 >
