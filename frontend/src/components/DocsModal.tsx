@@ -28,11 +28,11 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="docs-modal-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#211713]/90 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-5xl bg-gradient-to-b from-[#493027] to-[#211713] border border-[#76503B] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-6 max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-5xl bg-gradient-to-b from-[#493027] to-[#211713] border border-[#A87557] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-6 max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#76503B]">
+        <div className="flex items-center justify-between pb-4 border-b border-[#A87557]">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30">
+            <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557]">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
@@ -56,7 +56,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
         </div>
 
         {/* Tab Navigation */}
-        <div role="tablist" aria-label="Project documents" className="flex items-center gap-1.5 overflow-x-auto py-3 border-b border-[#76503B] text-xs font-semibold no-scrollbar">
+        <div role="tablist" aria-label="Project documents" className="flex items-center gap-1.5 overflow-x-auto py-3 border-b border-[#A87557] text-xs font-semibold no-scrollbar">
           {(['PRD', 'ARCHITECTURE', 'AGENTS', 'DECISIONS', 'TASKS', 'CONTEXT', 'README'] as DocTab[]).map((tab) => (
             <button
               key={tab}
@@ -82,21 +82,21 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           {activeTab === 'PRD' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-[#F0DFCE]">Product Requirements Document (PRD.md)</h2>
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B]">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557]">
                 <h4 className="font-bold text-[#F0DFCE]">1. Problem Statement</h4>
                 <p className="mt-1 text-[#D0A98B]">
                   Micro-entrepreneurs in India face volatile raw ingredient price surges (especially dairy, spices, and fuel) with slim margins and high price sensitivity from customers. Chai Stall Tycoon models this dynamic in a realistic, deterministic business simulation.
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B]">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557]">
                 <h4 className="font-bold text-[#F0DFCE]">2. Target Audience & Personas</h4>
                 <p className="mt-1 text-[#D0A98B]">
                   Hackathon judges, simulation gamers, and students learning economic elasticity, inventory optimization, and crisis pivot strategies.
                 </p>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B]">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557]">
                 <h4 className="font-bold text-[#F0DFCE]">3. MVP Core Capabilities</h4>
                 <ul className="list-disc list-inside mt-1 space-y-1 text-[#D0A98B]">
                   <li><strong>Budget & Inventory:</strong> Daily starting funds (₹500) and multi-ingredient inventory tracking (Tea, Milk, Sugar, Spices, Kulhad Cups).</li>
@@ -112,7 +112,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           {activeTab === 'ARCHITECTURE' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-[#F0DFCE]">System Architecture (ARCHITECTURE.md)</h2>
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B] font-mono text-xs text-[#F0DFCE]">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557] font-mono text-xs text-[#F0DFCE]">
                 [Client Browser / Next.js 16]<br />
                 │<br />
                 ├── SimulationEngine (Pure TypeScript, Zero Backend Dependency)<br />
@@ -135,7 +135,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           {activeTab === 'AGENTS' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-[#F0DFCE]">Agent Instructions & Conventions (AGENTS.md)</h2>
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B]">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557]">
                 <h4 className="font-bold text-[#F0DFCE]">Coding Conventions</h4>
                 <ul className="list-disc list-inside mt-1 space-y-1 text-[#D0A98B]">
                   <li><strong>Browser-First Protocol:</strong> Local calculations, deterministic state, sample/mock initializations.</li>
@@ -151,14 +151,14 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-[#F0DFCE]">Technical Decisions Log (DECISIONS.md)</h2>
               <div className="space-y-3">
-                <div className="p-3 rounded-xl bg-[#493027] border border-[#76503B]">
+                <div className="p-3 rounded-xl bg-[#493027] border border-[#A87557]">
                   <h4 className="font-bold text-[#F0DFCE]">ADR 01: Client-Side Deterministic Engine</h4>
                   <p className="text-[#D0A98B] mt-1">
                     <strong>Decision:</strong> Implemented the core simulation engine in pure TypeScript on the client rather than relying on native SQLite binary compilation.<br />
                     <strong>Rationale:</strong> Avoids native build failures across disparate Node versions (e.g. Node 26 ABI mismatches), guaranteeing instant preview and zero-friction judging.
                   </p>
                 </div>
-                <div className="p-3 rounded-xl bg-[#493027] border border-[#76503B]">
+                <div className="p-3 rounded-xl bg-[#493027] border border-[#A87557]">
                   <h4 className="font-bold text-[#F0DFCE]">ADR 02: Menu Pivot as Twist Countermeasure</h4>
                   <p className="text-[#D0A98B] mt-1">
                     <strong>Decision:</strong> In addition to "Raise Price" and "Absorb Cost", added "Pivot to Ayurvedic Kadha & Green Tea" directly from the user's authentic Bawaal Chaiwala menu card.<br />
@@ -204,7 +204,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           {activeTab === 'CONTEXT' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-[#F0DFCE]">Current Context & State (CONTEXT.md)</h2>
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B]">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557]">
                 <p className="text-[#F0DFCE]">
                   All MVP criteria, non-negotiable build rules, and judge verification paths are 100% operational. The Minute 40 Twist supply shock is integrated with live decision matrix feedback. Zero blockers identified.
                 </p>
@@ -215,7 +215,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           {activeTab === 'README' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-[#F0DFCE]">Project Overview (README.md)</h2>
-              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#76503B] font-mono text-xs">
+              <div className="p-3.5 rounded-xl bg-[#493027] border border-[#A87557] font-mono text-xs">
                 # Chai Stall Tycoon (Bawaal Chaiwala)<br />
                 Run your own authentic Indian chai stall, buy stock, set prices, survive rush hour, and beat the milk supply shock.<br /><br />
                 ## Quick Start<br />
@@ -232,7 +232,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
         </div>
 
         {/* Modal Footer */}
-        <div className="pt-4 border-t border-[#76503B] flex justify-end">
+        <div className="pt-4 border-t border-[#A87557] flex justify-end">
           <button
             type="button"
             onClick={onClose}
