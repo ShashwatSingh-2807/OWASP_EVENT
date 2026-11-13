@@ -37,16 +37,16 @@ export default function JudgeDemoBar({
   const shockResolved = gameState.shock.resolved;
 
   return (
-    <div className="sticky top-0 z-40 border-b border-stone-700/70 bg-stone-950/90 px-3 py-2 text-white shadow-lg shadow-black/20 backdrop-blur-xl">
+    <div className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 px-3 py-2 text-slate-900 shadow-lg shadow-black/20 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl flex-col gap-2.5 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex min-w-0 items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2.5">
-            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-bold tracking-wide text-emerald-300">
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-200/30 bg-emerald-600/10 px-2.5 py-1 text-[10px] font-bold tracking-wide text-emerald-800">
               <CheckCircle2 className="h-3.5 w-3.5" />
               PASSCODE VERIFIED
             </span>
-            <span className="hidden items-center gap-1.5 text-xs text-stone-400 sm:inline-flex">
-              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+            <span className="hidden items-center gap-1.5 text-xs text-slate-600 sm:inline-flex">
+              <Sparkles className="h-3.5 w-3.5 text-sky-700" />
               Minute 40 twist unlocked
             </span>
           </div>
@@ -55,7 +55,7 @@ export default function JudgeDemoBar({
               type="button"
               onClick={onOpenMenu}
               aria-label="Open Bawaal menu"
-              className="rounded-lg border border-stone-700 bg-stone-900 p-2 text-amber-300 transition-colors hover:bg-stone-800"
+              className="rounded-lg border border-slate-300 bg-white p-2 text-sky-800 transition-colors hover:bg-slate-100"
             >
               <UtensilsCrossed className="h-4 w-4" />
             </button>
@@ -63,7 +63,7 @@ export default function JudgeDemoBar({
               type="button"
               onClick={onOpenDocs}
               aria-label="Open project documentation"
-              className="rounded-lg border border-stone-700 bg-stone-900 p-2 text-sky-300 transition-colors hover:bg-stone-800"
+              className="rounded-lg border border-slate-300 bg-white p-2 text-sky-800 transition-colors hover:bg-slate-100"
             >
               <FileText className="h-4 w-4" />
             </button>
@@ -72,7 +72,7 @@ export default function JudgeDemoBar({
               onClick={onResetGame}
               aria-label="Reset game"
               title="Reset Game to Day 1"
-              className="rounded-lg border border-stone-700 bg-stone-900 p-2 text-stone-400 transition-colors hover:bg-stone-800 hover:text-stone-100"
+              className="rounded-lg border border-slate-300 bg-white p-2 text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
               <RotateCcw className="h-4 w-4" />
             </button>
@@ -84,14 +84,14 @@ export default function JudgeDemoBar({
             type="button"
             onClick={onSimulateStep01}
             disabled={gameState.gameStatus === 'simulating'}
-            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-amber-400/30 bg-amber-500 px-3 py-2 text-xs font-bold text-stone-950 shadow-sm transition-colors hover:bg-amber-400 disabled:opacity-50"
+            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-sky-300/30 bg-sky-600 px-3 py-2 text-xs font-bold text-slate-950 shadow-sm transition-colors hover:bg-sky-300 disabled:opacity-50"
             title="Step 01: Buy stock and simulate one day of sales"
           >
             <Play className="h-3.5 w-3.5 fill-current" />
             <span>01 · Simulate sales</span>
           </button>
 
-          <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-stone-600" />
+          <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-slate-600" />
 
           <button
             type="button"
@@ -99,27 +99,27 @@ export default function JudgeDemoBar({
             disabled={!hasReports}
             className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
               hasReports
-                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20'
-                : 'cursor-not-allowed border-stone-800 bg-stone-900 text-stone-500'
+                ? 'border-emerald-200/30 bg-emerald-600/10 text-emerald-800 hover:bg-emerald-600/20'
+                : 'cursor-not-allowed border-slate-200 bg-white text-slate-500'
             }`}
             title="Step 02: Show the revenue, costs and profit report"
           >
             <CheckCircle2 className="h-3.5 w-3.5" />
             <span>02 · P&L report</span>
-            {hasReports && <span className="text-[10px] text-emerald-400">Day {gameState.reports[gameState.reports.length - 1].day}</span>}
+            {hasReports && <span className="text-[10px] text-emerald-700">Day {gameState.reports[gameState.reports.length - 1].day}</span>}
           </button>
 
-          <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-stone-600" />
+          <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-slate-600" />
 
           <button
             type="button"
             onClick={onTriggerShockStep03}
             className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
               shockResolved
-                ? 'border-violet-500/30 bg-violet-500/10 text-violet-300 hover:bg-violet-500/20'
+                ? 'border-sky-300/30 bg-sky-600/10 text-sky-800 hover:bg-sky-600/20'
                 : shockTriggered
-                ? 'border-red-400/50 bg-red-500/15 text-red-200 hover:bg-red-500/25'
-                : 'border-red-500/40 bg-red-600 text-white hover:bg-red-500'
+                ? 'border-red-300/50 bg-red-600/15 text-red-800 hover:bg-red-600/25'
+                : 'border-red-200/40 bg-red-600 text-white hover:bg-red-600'
             }`}
             title="Step 03: Trigger the milk price shock and demonstrate decision options"
           >
@@ -132,17 +132,17 @@ export default function JudgeDemoBar({
           <button
             type="button"
             onClick={onOpenMenu}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-xs font-medium text-amber-200 transition-colors hover:border-amber-500/40 hover:bg-stone-800"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-sky-800 transition-colors hover:border-sky-300/40 hover:bg-slate-100"
           >
-            <UtensilsCrossed className="h-3.5 w-3.5 text-amber-400" />
+            <UtensilsCrossed className="h-3.5 w-3.5 text-sky-700" />
             Bawaal menu
           </button>
           <button
             type="button"
             onClick={onOpenDocs}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-xs font-medium text-sky-200 transition-colors hover:border-sky-500/40 hover:bg-stone-800"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-sky-800 transition-colors hover:border-sky-300/40 hover:bg-slate-100"
           >
-            <FileText className="h-3.5 w-3.5 text-sky-400" />
+            <FileText className="h-3.5 w-3.5 text-sky-700" />
             Docs
           </button>
           <button
@@ -150,7 +150,7 @@ export default function JudgeDemoBar({
             onClick={onResetGame}
             aria-label="Reset game"
             title="Reset Game to Day 1"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-stone-700 bg-stone-900 text-stone-400 transition-colors hover:bg-stone-800 hover:text-stone-100"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
           >
             <RotateCcw className="h-4 w-4" />
           </button>
