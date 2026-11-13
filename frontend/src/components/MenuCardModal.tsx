@@ -25,9 +25,9 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby="menu-modal-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#211713]/90 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-gradient-to-b from-[#493027] to-[#211713] border border-[#76503B] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-6 max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-gradient-to-b from-[#493027] to-[#211713] border-2 border-[#A87557] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-6 max-h-[92vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#76503B]">
+        <div className="flex items-center justify-between pb-4 border-b border-[#A87557]">
           <div className="flex items-center gap-2.5">
             <span className="text-2xl">📜</span>
             <div>
@@ -51,7 +51,7 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
         </div>
 
         {/* Real Menu Image Container */}
-        <div className="mt-4 rounded-2xl overflow-hidden border-2 border-[#76503B]/40 shadow-xl relative aspect-[16/9] w-full">
+        <div className="mt-4 rounded-2xl overflow-hidden border-2 border-[#A87557] shadow-xl relative aspect-[16/9] w-full">
           <Image
             src="/bawaal-menu.jpg"
             alt="Bawaal Chaiwala Authentic Menu"
@@ -64,8 +64,8 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
         {/* Menu Breakdown Sections */}
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           {/* Section 1 */}
-          <div className="bg-[#493027]/80 border border-[#76503B]/40 rounded-xl p-4">
-            <h4 className="font-bold text-[#F0DFCE] text-sm pb-1.5 border-b border-[#76503B] flex items-center gap-1.5">
+          <div className="bg-[#493027]/80 border border-[#A87557] rounded-xl p-4">
+            <h4 className="font-bold text-[#F0DFCE] text-sm pb-1.5 border-b border-[#A87557] flex items-center gap-1.5">
               <span>☕ Bawaal Chai (Speciality)</span>
             </h4>
             <ul className="mt-2.5 space-y-1.5 text-[#F0DFCE]">
@@ -89,8 +89,8 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
           </div>
 
           {/* Section 2 */}
-          <div className="bg-[#493027]/80 border border-[#76503B]/40 rounded-xl p-4">
-            <h4 className="font-bold text-[#F0DFCE] text-sm pb-1.5 border-b border-[#76503B] flex items-center gap-1.5">
+          <div className="bg-[#493027]/80 border border-[#A87557] rounded-xl p-4">
+            <h4 className="font-bold text-[#F0DFCE] text-sm pb-1.5 border-b border-[#A87557] flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#F0DFCE]" />
               <span>Fitness & Health (Zero Milk!)</span>
             </h4>
@@ -115,8 +115,8 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
           </div>
 
           {/* Section 3 */}
-          <div className="bg-[#493027]/80 border border-[#76503B]/40 rounded-xl p-4">
-            <h4 className="font-bold text-[#F0DFCE] text-sm pb-1.5 border-b border-[#76503B] flex items-center gap-1.5">
+          <div className="bg-[#493027]/80 border border-[#A87557] rounded-xl p-4">
+            <h4 className="font-bold text-[#F0DFCE] text-sm pb-1.5 border-b border-[#A87557] flex items-center gap-1.5">
               <span>🥪 Bawaal Combos</span>
             </h4>
             <ul className="mt-2.5 space-y-1.5 text-[#F0DFCE]">
@@ -137,7 +137,7 @@ export default function MenuCardModal({ isOpen, onClose }: MenuCardModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="mt-6 pt-4 border-t border-[#76503B] flex justify-end">
+        <div className="mt-6 pt-4 border-t border-[#A87557] flex justify-end">
           <button
             type="button"
             onClick={onClose}
