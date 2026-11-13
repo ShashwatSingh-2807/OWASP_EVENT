@@ -39,7 +39,7 @@ export default function HistoricalSummary({ gameState }: HistoricalSummaryProps)
   const avgRating = Math.round((totals.ratingSum / reports.length) * 10) / 10;
 
   return (
-    <section className="bg-stone-900/90 border border-amber-600/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
+    <section className="bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-700/80 rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title */}
       <div className="flex items-center justify-between pb-4 border-b border-stone-800 flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
