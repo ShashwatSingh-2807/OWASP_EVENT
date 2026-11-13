@@ -125,6 +125,7 @@ export default function PricingStrategy({
                   Chai Price Per Cup
                 </label>
                 <p className="mt-1 text-xs text-stone-400">Sweet spot is ₹12 - ₹20</p>
+              </div>
               <div className="text-right">
                 <span className="text-3xl font-black text-amber-300 font-mono flex items-center justify-end">
                   <IndianRupee className="w-6 h-6 inline -mr-1" />
