@@ -126,6 +126,7 @@ export default function ChaiStallTycoonApp() {
   const handleStep03 = () => {
     const shockedState = triggerMilkPriceShock(gameState);
     setGameState(shockedState);
+    setIsReportModalOpen(false);
     setIsShockModalOpen(true);
   };
 
