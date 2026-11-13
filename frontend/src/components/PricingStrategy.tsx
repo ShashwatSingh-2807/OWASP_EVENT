@@ -121,11 +121,10 @@ export default function PricingStrategy({
             {/* Price Header with Slider */}
             <div className="flex items-center justify-between">
               <div>
-                <label htmlFor="chai-price-slider" className="text-xs uppercase tracking-wider font-bold text-stone-200 block">
+                <label htmlFor="chai-price-slider" className="block text-xs font-bold uppercase tracking-wider text-stone-200">
                   Chai Price Per Cup
-                </span>
-                <span className="mt-1 block text-xs text-stone-400">Sweet spot is ₹12 - ₹20</span>
-              </label>
+                </label>
+                <p className="mt-1 text-xs text-stone-400">Sweet spot is ₹12 - ₹20</p>
               <div className="text-right">
                 <span className="text-3xl font-black text-amber-300 font-mono flex items-center justify-end">
                   <IndianRupee className="w-6 h-6 inline -mr-1" />
