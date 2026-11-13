@@ -169,10 +169,10 @@ export default function ChaiStallTycoonApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#211713] text-[#F0DFCE] flex flex-col font-sans selection:bg-[#A87557] selection:text-[#F0DFCE]">
+    <div className="min-h-screen bg-[#211713] text-[#F0DFCE] flex flex-col font-sans selection:bg-[#D0A98B] selection:text-[#211713]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#A87557] focus:px-4 focus:py-3 focus:font-bold focus:text-[#F0DFCE]"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#D0A98B] focus:px-4 focus:py-3 focus:font-bold focus:text-[#211713]"
       >
         Skip to game dashboard
       </a>
