@@ -54,7 +54,7 @@ export default function Header({ gameState, onOpenMenu }: HeaderProps) {
 
           <div>
             <div className="flex items-center gap-2 justify-center sm:justify-start">
-              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-50 via-sky-100 to-slate-900 font-serif">
+              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-700 via-sky-600 to-sky-800 font-serif">
                 BAWAAL CHAIWALA
               </h1>
               <span className="text-xs px-2 py-0.5 rounded bg-sky-600/20 text-sky-800 border border-sky-300/40 font-mono">
