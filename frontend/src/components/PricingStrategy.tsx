@@ -36,11 +36,11 @@ export default function PricingStrategy({
   const presets = [10, 12, 15, 20, 25, 30];
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border-2 border-[#A87557] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
       {/* Title */}
-      <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
+      <div className="flex items-center justify-between pb-4 border-b border-[#A87557] flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30">
+          <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border-2 border-[#A87557]">
             <Flame className="w-5 h-5" />
           </div>
           <div>
@@ -53,7 +53,7 @@ export default function PricingStrategy({
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-xs bg-[#493027] px-3 py-1.5 rounded-lg border border-[#493027]">
+        <div className="flex items-center gap-2 text-xs bg-[#493027] px-3 py-1.5 rounded-lg border-2 border-[#A87557]">
           <span className="text-[#D0A98B]">Today’s Forecast:</span>
           <span className="text-[#F0DFCE] font-semibold">{weather.icon} {weather.name} ({weather.multiplier}x demand)</span>
         </div>
@@ -79,14 +79,14 @@ export default function PricingStrategy({
                   type="button"
                   onClick={() => onSelectMenu(menuKey)}
                   aria-pressed={isSelected}
-                  className={`relative block w-full rounded-xl border p-4 text-left transition-all duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#76503B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#493027] ${
+                  className={`relative block w-full rounded-xl border p-4 text-left transition-all duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#D0A98B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#211713] ${
                     isSelected
-                      ? 'border-[#76503B]/80 bg-[#A87557]/10 shadow-lg shadow-[#493027]/30 ring-1 ring-[#76503B]/30'
-                      : 'border-[#76503B]/80 bg-[#493027]/50 hover:border-[#76503B] hover:bg-[#493027]'
+                      ? 'border-[#A87557] bg-[#A87557]/10 shadow-lg shadow-[#493027]/30 ring-1 ring-[#D0A98B]'
+                      : 'border-[#A87557] bg-[#493027]/50 hover:border-[#A87557] hover:bg-[#493027]'
                   }`}
                 >
                   {isMilkFree && (
-                    <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-[#493027]/30 bg-[#A87557]/10 px-2 py-1 text-[11px] font-bold text-[#F0DFCE]">
+                    <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-[#A87557] bg-[#A87557]/10 px-2 py-1 text-[11px] font-bold text-[#F0DFCE]">
                       <ShieldCheck className="h-3 w-3" /> ZERO MILK
                     </span>
                   )}
@@ -98,7 +98,7 @@ export default function PricingStrategy({
                     <span className="mt-1 block text-xs leading-relaxed text-[#D0A98B]">{item.tagline}</span>
                   </span>
 
-                  <span className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#493027] pt-3 text-xs">
+                  <span className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-[#A87557] pt-3 text-xs">
                     <span className="text-[#D0A98B]">
                       Ingredient cost <strong className="font-mono font-semibold text-[#F0DFCE]">₹{itemCost.toFixed(2)}</strong>
                     </span>
@@ -116,7 +116,7 @@ export default function PricingStrategy({
         </div>
 
         {/* Right Column: Interactive Price Slider & Live Margin Visualizer (7 cols) */}
-        <div className="lg:col-span-7 bg-[#493027]/60 border border-[#493027] rounded-xl p-5 flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-[#493027]/60 border-2 border-[#A87557] rounded-xl p-5 flex flex-col justify-between">
           <div>
             {/* Price Header with Slider */}
             <div className="flex items-center justify-between">
@@ -168,7 +168,7 @@ export default function PricingStrategy({
                   className={`px-2.5 py-1 rounded text-xs font-mono font-bold transition-colors ${
                     gameState.chaiPrice === p
                       ? 'bg-[#76503B] text-[#F0DFCE]'
-                      : 'bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B]'
+                      : 'bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#A87557]'
                   }`}
                 >
                   ₹{p}
@@ -177,12 +177,12 @@ export default function PricingStrategy({
             </div>
 
             {/* Live Financial Breakdown Bar */}
-            <div aria-label="Live price breakdown" className="grid grid-cols-3 gap-2.5 mt-5 bg-[#493027]/90 rounded-xl p-3.5 border border-[#493027]">
-              <div className="text-center border-r border-[#493027]">
+            <div aria-label="Live price breakdown" className="grid grid-cols-3 gap-2.5 mt-5 bg-[#493027]/90 rounded-xl p-3.5 border-2 border-[#A87557]">
+              <div className="text-center border-r border-[#A87557]">
                 <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Unit Cost (COGS)</span>
                 <span className="text-base font-bold text-[#F0DFCE] font-mono">₹{unitCost.toFixed(2)}</span>
               </div>
-              <div className="text-center border-r border-[#493027]">
+              <div className="text-center border-r border-[#A87557]">
                 <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Unit Profit</span>
                 <span className="text-base font-bold text-[#F0DFCE] font-mono">₹{profitPerCup.toFixed(2)}</span>
               </div>
@@ -193,7 +193,7 @@ export default function PricingStrategy({
             </div>
 
             {/* Demand & Elasticity Insight */}
-            <div className="mt-3.5 p-3 rounded-xl bg-[#493027]/50 border border-[#493027] flex items-center justify-between text-xs">
+            <div className="mt-3.5 p-3 rounded-xl bg-[#493027]/50 border-2 border-[#A87557] flex items-center justify-between text-xs">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#F0DFCE] shrink-0" />
                 <span className="text-[#F0DFCE]">
@@ -209,12 +209,12 @@ export default function PricingStrategy({
           </div>
 
           {/* Action Trigger: Open Stall & Start Rush Hour */}
-          <div className="mt-5 pt-4 border-t border-[#493027]">
+          <div className="mt-5 pt-4 border-t border-[#A87557]">
             <button
               type="button"
               onClick={onStartSimulation}
               disabled={gameState.gameStatus === 'simulating'}
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#D0A98B] to-[#A87557] hover:from-[#76503B] hover:to-[#76503B] active:scale-98 text-[#211713] font-bold text-base sm:text-lg shadow-xl shadow-[#493027]/30 flex items-center justify-center gap-3 transition-all border border-[#76503B]/40"
+              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#D0A98B] to-[#A87557] hover:from-[#76503B] hover:to-[#76503B] active:scale-98 text-[#211713] font-bold text-base sm:text-lg shadow-xl shadow-[#493027]/30 flex items-center justify-center gap-3 transition-all border border-[#A87557]"
             >
               <Play className="w-5 h-5 fill-white" />
               <span>Open Chai Stall & Start Day {gameState.day} Sales!</span>
