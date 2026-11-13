@@ -169,10 +169,10 @@ export default function ChaiStallTycoonApp() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-sky-600 selection:text-slate-950">
+    <div className="min-h-screen bg-[#211713] text-[#F0DFCE] flex flex-col font-sans selection:bg-[#D0A98B] selection:text-[#211713]">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-sky-300 focus:px-4 focus:py-3 focus:font-bold focus:text-slate-950"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#D0A98B] focus:px-4 focus:py-3 focus:font-bold focus:text-[#211713]"
       >
         Skip to game dashboard
       </a>
@@ -197,21 +197,21 @@ export default function ChaiStallTycoonApp() {
       {/* 3. Main Stall Dashboard Container */}
       <main id="main-content" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 outline-none">
         {/* Quick Demo Helpers for Mentors / Judges */}
-        <div className="bg-white/60 border border-sky-300/20 rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-slate-600 flex-wrap gap-2">
+        <div className="bg-[#493027]/60 border border-[#76503B]/20 rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-[#D0A98B] flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <span className="font-semibold text-sky-800">Quick Test Utilities:</span>
+            <span className="font-semibold text-[#F0DFCE]">Quick Test Utilities:</span>
             <span>Deterministic simulation • Zero negative inventory guaranteed • Browser-first</span>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={handleLoadSampleData}
-              className="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 text-[11px] font-mono transition-colors"
+              className="px-2.5 py-1 rounded bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B] text-[11px] font-mono transition-colors"
             >
               Load Sample 2-Day Data + Shock
             </button>
             <button
               onClick={() => setIsDocsModalOpen(true)}
-              className="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-sky-800 border border-slate-300 text-[11px] font-mono transition-colors"
+              className="px-2.5 py-1 rounded bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B] text-[11px] font-mono transition-colors"
             >
               View Slide Docs (7 Files)
             </button>
@@ -239,11 +239,11 @@ export default function ChaiStallTycoonApp() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-slate-200 bg-slate-50 py-6 px-4 text-center text-xs text-slate-500">
-        <p className="font-medium text-slate-600">
+      <footer className="mt-auto border-t border-[#493027] bg-[#493027] py-6 px-4 text-center text-xs text-[#D0A98B]">
+        <p className="font-medium text-[#D0A98B]">
           Chai Stall Tycoon — Bawaal Chaiwala • Built for VIBESPRINT Hackathon
         </p>
-        <p className="mt-1 text-[11px] text-slate-600">
+        <p className="mt-1 text-[11px] text-[#D0A98B]">
           Browser-First Local Calculation Engine • No external API or backend needed • Deterministic simulation
         </p>
       </footer>

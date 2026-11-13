@@ -49,53 +49,53 @@ export default function MilkShockModal({
   const newPrice = gameState.shock.newMilkPrice || 120;
 
   return (
-    <div role="dialog" aria-modal="true" aria-label="Minute 40 milk supply shock decision" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/60 backdrop-blur-lg overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-gradient-to-b from-white via-slate-50 to-rose-50/40 border border-red-200 rounded-3xl p-6 sm:p-8 shadow-2xl text-slate-900 my-6 max-h-[92vh] overflow-y-auto">
+    <div role="dialog" aria-modal="true" aria-label="Minute 40 milk supply shock decision" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#211713]/90 backdrop-blur-lg overflow-y-auto animate-fadeIn">
+      <div className="relative w-full max-w-4xl bg-gradient-to-b from-[#493027] via-[#493027] to-[#211713] border border-[#76503B] rounded-3xl p-6 sm:p-8 shadow-2xl text-[#F0DFCE] my-6 max-h-[92vh] overflow-y-auto">
         {/* Step 03 & Twist Badge */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-200 flex-wrap gap-2">
+        <div className="flex items-center justify-between pb-4 border-b border-[#76503B] flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-red-600/10 text-red-800 border border-red-200/30 text-xs font-mono font-bold tracking-wide flex items-center gap-1.5">
-              <ShieldAlert className="w-4 h-4 text-red-700" />
+            <span className="px-3 py-1 rounded-full bg-[#A87557]/10 text-[#F0DFCE] border border-[#76503B]/30 text-xs font-mono font-bold tracking-wide flex items-center gap-1.5">
+              <ShieldAlert className="w-4 h-4 text-[#F0DFCE]" />
               MINUTE 40 TWIST: SUPPLY SHOCK
             </span>
-            <span className="text-xs text-sky-800 font-semibold">
+            <span className="text-xs text-[#F0DFCE] font-semibold">
               JUDGE DEMO STEP 03
             </span>
           </div>
 
-          <span className="text-xs text-slate-600 font-mono">
+          <span className="text-xs text-[#D0A98B] font-mono">
             Event Code: MILK-DOUBLED-2X
           </span>
         </div>
 
         {/* Breaking News Crisis Banner */}
-        <div className="mt-4 p-5 rounded-2xl bg-rose-50/35 border border-red-200/40 shadow-lg shadow-rose-50/20 relative overflow-hidden">
+        <div className="mt-4 p-5 rounded-2xl bg-[#493027]/35 border border-[#76503B]/40 shadow-lg shadow-[#493027]/20 relative overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-start gap-3.5">
-              <div className="text-4xl p-2.5 rounded-2xl bg-red-600/20 border border-red-200/40 text-red-700 shrink-0">
+              <div className="text-4xl p-2.5 rounded-2xl bg-[#A87557]/20 border border-[#76503B]/40 text-[#F0DFCE] shrink-0">
                 🥛🚨
               </div>
               <div>
-                <span className="text-[11px] font-mono font-bold text-red-700 uppercase tracking-widest block">
+                <span className="text-[11px] font-mono font-bold text-[#F0DFCE] uppercase tracking-widest block">
                   Breaking Market Crisis
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-red-900 font-serif tracking-tight mt-0.5">
+                <h3 className="text-xl sm:text-2xl font-black text-[#F0DFCE] font-serif tracking-tight mt-0.5">
                   Milk Wholesale Costs Double Overnight!
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-700 mt-1 max-w-xl leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#F0DFCE] mt-1 max-w-xl leading-relaxed">
                   A sudden statewide fodder shortage and transport strike have shocked dairy supply.
-                  Wholesale milk surged from <span className="text-sky-800 font-mono font-bold">₹{oldPrice}/L</span> to{' '}
-                  <span className="text-red-700 font-mono font-black text-base">₹{newPrice}/L (+100%)</span>!
+                  Wholesale milk surged from <span className="text-[#F0DFCE] font-mono font-bold">₹{oldPrice}/L</span> to{' '}
+                  <span className="text-[#F0DFCE] font-mono font-black text-base">₹{newPrice}/L (+100%)</span>!
                 </p>
               </div>
             </div>
 
-            <div className="bg-slate-50/80 border border-red-200/50 rounded-xl p-3 text-center sm:text-right shrink-0">
-              <span className="text-[10px] text-slate-600 uppercase font-semibold block">Old Rate ➔ New Rate</span>
-              <span className="text-xl font-mono font-black text-red-700 block">
+            <div className="bg-[#493027]/80 border border-[#76503B]/50 rounded-xl p-3 text-center sm:text-right shrink-0">
+              <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">Old Rate ➔ New Rate</span>
+              <span className="text-xl font-mono font-black text-[#F0DFCE] block">
                 ₹{oldPrice} ➔ ₹{newPrice}
               </span>
-              <span className="text-[10px] text-slate-600 block mt-0.5">+₹3.00 cost per cup</span>
+              <span className="text-[10px] text-[#D0A98B] block mt-0.5">+₹3.00 cost per cup</span>
             </div>
           </div>
         </div>
@@ -104,10 +104,10 @@ export default function MilkShockModal({
         <div className="mt-6">
           <div className="flex items-center justify-between mb-3">
             <div>
-              <h4 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <h4 className="text-base font-bold text-[#F0DFCE] flex items-center gap-2">
                 <span>Choose Your Stall Strategy:</span>
               </h4>
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-[#D0A98B]">
                 Evaluate trade-offs between customer loyalty, profit margins, and menu innovation.
               </p>
             </div>
@@ -127,43 +127,43 @@ export default function MilkShockModal({
                   aria-pressed={isChosen}
                   aria-label={`Select strategy: ${info.title}`}
                   onClick={() => setSelected(decKey)}
-                  className={`flex min-h-full w-full flex-col justify-between rounded-2xl border p-4 text-left transition-all duration-200 focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-100 sm:p-5 ${
+                  className={`flex min-h-full w-full flex-col justify-between rounded-2xl border p-4 text-left transition-all duration-200 focus-visible:ring-2 focus-visible:ring-[#76503B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#493027] sm:p-5 ${
                     isChosen
-                      ? 'border-sky-300/80 bg-sky-600/10 shadow-lg shadow-sky-50/30 ring-1 ring-sky-300/30'
-                      : 'border-slate-300/80 bg-slate-50/60 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white'
+                      ? 'border-[#76503B]/80 bg-[#A87557]/10 shadow-lg shadow-[#493027]/30 ring-1 ring-[#76503B]/30'
+                      : 'border-[#76503B]/80 bg-[#493027]/60 hover:-translate-y-0.5 hover:border-[#76503B] hover:bg-[#493027]'
                   } ${confirmed && !isChosen ? 'opacity-55' : ''}`}
                 >
                   <span className="mb-3 flex w-full items-center justify-between">
                     <span className="text-2xl">{info.icon}</span>
                     <span className={`rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${
-                      isChosen ? 'border-sky-300/40 bg-sky-600/10 text-sky-800' : 'border-slate-300 bg-slate-100 text-slate-600'
+                      isChosen ? 'border-[#76503B]/40 bg-[#A87557]/10 text-[#F0DFCE]' : 'border-[#76503B] bg-[#493027] text-[#D0A98B]'
                     }`}>
                       {info.badge}
                     </span>
                   </span>
 
                   <span className="block w-full">
-                    <span className="block text-base font-bold leading-snug text-slate-900">{info.title}</span>
-                    <span className="mt-1 block text-xs font-medium leading-relaxed text-sky-800">{info.tagline}</span>
+                    <span className="block text-base font-bold leading-snug text-[#F0DFCE]">{info.title}</span>
+                    <span className="mt-1 block text-xs font-medium leading-relaxed text-[#F0DFCE]">{info.tagline}</span>
 
                     <span className="mt-3 block space-y-2 text-xs leading-relaxed">
-                      <span className="block rounded-lg border border-emerald-200/25 bg-emerald-50/25 p-3 text-emerald-800">
-                        <strong className="text-emerald-800">Pros:</strong> {info.pros}
+                      <span className="block rounded-lg border border-[#76503B]/25 bg-[#493027]/25 p-3 text-[#F0DFCE]">
+                        <strong className="text-[#F0DFCE]">Pros:</strong> {info.pros}
                       </span>
-                      <span className="block rounded-lg border border-red-200/25 bg-rose-50/25 p-3 text-red-800">
-                        <strong className="text-red-800">Cons:</strong> {info.cons}
+                      <span className="block rounded-lg border border-[#76503B]/25 bg-[#493027]/25 p-3 text-[#F0DFCE]">
+                        <strong className="text-[#F0DFCE]">Cons:</strong> {info.cons}
                       </span>
                     </span>
 
-                    <span className="mt-3 block border-t border-slate-200 pt-3 font-mono text-[11px] leading-relaxed text-slate-600">
+                    <span className="mt-3 block border-t border-[#76503B] pt-3 font-mono text-[11px] leading-relaxed text-[#D0A98B]">
                       💡 {info.mathExplanation}
                     </span>
                   </span>
 
                   <span className={`mt-4 block w-full rounded-xl border px-3 py-2.5 text-center text-xs font-bold transition-colors ${
                     isChosen
-                      ? 'border-sky-300/40 bg-sky-300 text-slate-950'
-                      : 'border-slate-300 bg-slate-100 text-slate-700'
+                      ? 'border-[#76503B]/40 bg-[#76503B] text-[#F0DFCE]'
+                      : 'border-[#76503B] bg-[#493027] text-[#F0DFCE]'
                   }`}>
                     {isChosen ? '✓ Selected strategy' : 'Select this strategy'}
                   </span>
@@ -174,16 +174,16 @@ export default function MilkShockModal({
         </div>
 
         {/* Confirmation & Bottom Action */}
-        <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div aria-live="polite" className="text-xs leading-relaxed text-slate-600 text-center sm:text-left">
+        <div className="mt-6 pt-4 border-t border-[#76503B] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div aria-live="polite" className="text-xs leading-relaxed text-[#D0A98B] text-center sm:text-left">
             {confirmed ? (
-              <span className="text-emerald-700 font-bold flex items-center gap-1.5">
+              <span className="text-[#F0DFCE] font-bold flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4" />
                 Strategy activated successfully! Changes applied to Day {gameState.day} simulation.
               </span>
             ) : selected ? (
               <span>
-                Ready to execute strategy: <strong className="text-sky-800">{SHOCK_DECISION_DETAILS[selected].title}</strong>
+                Ready to execute strategy: <strong className="text-[#F0DFCE]">{SHOCK_DECISION_DETAILS[selected].title}</strong>
               </span>
             ) : (
               <span>Please select one of the 3 strategies above to proceed.</span>
@@ -196,7 +196,7 @@ export default function MilkShockModal({
                 type="button"
                 onClick={handleConfirm}
                 disabled={!selected}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-700 hover:to-blue-700 active:scale-95 text-white font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed border border-sky-300/40"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] active:scale-95 text-[#211713] font-bold text-sm shadow-xl flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed border border-[#76503B]/40"
               >
                 <span>Confirm & Apply Strategy</span>
                 <ArrowRight className="w-4 h-4" />
@@ -205,7 +205,7 @@ export default function MilkShockModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#D0A98B] hover:bg-[#F0DFCE] text-[#211713] font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-all"
               >
                 <span>Continue to Stall Simulation</span>
                 <ArrowRight className="w-4 h-4" />

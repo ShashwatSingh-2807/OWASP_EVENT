@@ -119,12 +119,18 @@ The figures, customer personas and market events are part of the simulation. The
 
 ## 🎨 Interface design
 
-The interface uses a clean **white, near-black and ice-blue** visual system:
+The interface uses a warm **espresso, cocoa and caramel** visual system based on a six-colour palette:
 
-- White surfaces and a soft cool background keep the dashboard open and easy to scan.
-- Near-black typography provides clear hierarchy and contrast.
-- Ice-blue accents distinguish primary actions, selected controls and interactive elements.
-- Green and red remain reserved for positive financial results and important warnings.
+| Colour | Hex | Role |
+| --- | --- | --- |
+| Espresso | `#211713` | Main page background |
+| Deep cocoa | `#493027` | Dashboard cards and primary surfaces |
+| Roast brown | `#76503B` | Raised panels, borders and selected states |
+| Caramel | `#A87557` | Secondary accents and visual details |
+| Warm tan | `#D0A98B` | Primary actions and highlights |
+| Soft cream | `#F0DFCE` | Main typography and high-contrast content |
+
+The layout is responsive and designed to work across desktop, tablet and mobile screens.
 
 The layout is responsive and designed to work across desktop, tablet and mobile screens.
 
