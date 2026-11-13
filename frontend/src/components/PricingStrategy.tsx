@@ -36,7 +36,7 @@ export default function PricingStrategy({
   const presets = [10, 12, 15, 20, 25, 30];
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#2B1D17] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title */}
       <div className="flex items-center justify-between pb-4 border-b border-[#493027] flex-wrap gap-2">
         <div className="flex items-center gap-2.5">
@@ -214,7 +214,7 @@ export default function PricingStrategy({
               type="button"
               onClick={onStartSimulation}
               disabled={gameState.gameStatus === 'simulating'}
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#D0A98B] to-[#A87557] hover:from-[#76503B] hover:to-[#76503B] active:scale-98 text-[#F0DFCE] font-bold text-base sm:text-lg shadow-xl shadow-[#493027]/30 flex items-center justify-center gap-3 transition-all border border-[#76503B]/40"
+              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#D0A98B] to-[#A87557] hover:from-[#76503B] hover:to-[#76503B] active:scale-98 text-[#211713] font-bold text-base sm:text-lg shadow-xl shadow-[#493027]/30 flex items-center justify-center gap-3 transition-all border border-[#76503B]/40"
             >
               <Play className="w-5 h-5 fill-white" />
               <span>Open Chai Stall & Start Day {gameState.day} Sales!</span>
