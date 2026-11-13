@@ -37,11 +37,11 @@ export default function JudgeDemoBar({
   const shockResolved = gameState.shock.resolved;
 
   return (
-    <div className="sticky top-0 z-40 border-b border-[#76503B]/80 bg-[#211713]/95 px-3 py-2 text-[#F0DFCE] shadow-lg shadow-[#211713]/30 backdrop-blur-xl">
+    <div className="sticky top-0 z-40 border-b border-[#A87557] bg-[#211713]/95 px-3 py-2 text-[#F0DFCE] shadow-lg shadow-[#211713]/30 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl flex-col gap-2.5 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex min-w-0 items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2.5">
-            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#493027]/30 bg-[#A87557]/10 px-2.5 py-1 text-[10px] font-bold tracking-wide text-[#F0DFCE]">
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-[#A87557] bg-[#A87557]/10 px-2.5 py-1 text-[10px] font-bold tracking-wide text-[#F0DFCE]">
               <CheckCircle2 className="h-3.5 w-3.5" />
               PASSCODE VERIFIED
             </span>
@@ -55,7 +55,7 @@ export default function JudgeDemoBar({
               type="button"
               onClick={onOpenMenu}
               aria-label="Open Bawaal menu"
-              className="rounded-lg border border-[#76503B] bg-[#493027] p-2 text-[#F0DFCE] transition-colors hover:bg-[#493027]"
+              className="rounded-lg border border-[#A87557] bg-[#493027] p-2 text-[#F0DFCE] transition-colors hover:bg-[#493027]"
             >
               <UtensilsCrossed className="h-4 w-4" />
             </button>
@@ -63,7 +63,7 @@ export default function JudgeDemoBar({
               type="button"
               onClick={onOpenDocs}
               aria-label="Open project documentation"
-              className="rounded-lg border border-[#76503B] bg-[#493027] p-2 text-[#F0DFCE] transition-colors hover:bg-[#493027]"
+              className="rounded-lg border border-[#A87557] bg-[#493027] p-2 text-[#F0DFCE] transition-colors hover:bg-[#493027]"
             >
               <FileText className="h-4 w-4" />
             </button>
@@ -72,7 +72,7 @@ export default function JudgeDemoBar({
               onClick={onResetGame}
               aria-label="Reset game"
               title="Reset Game to Day 1"
-              className="rounded-lg border border-[#76503B] bg-[#493027] p-2 text-[#D0A98B] transition-colors hover:bg-[#493027] hover:text-[#F0DFCE]"
+              className="rounded-lg border border-[#A87557] bg-[#493027] p-2 text-[#D0A98B] transition-colors hover:bg-[#493027] hover:text-[#F0DFCE]"
             >
               <RotateCcw className="h-4 w-4" />
             </button>
@@ -84,7 +84,7 @@ export default function JudgeDemoBar({
             type="button"
             onClick={onSimulateStep01}
             disabled={gameState.gameStatus === 'simulating'}
-            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-[#76503B]/30 bg-[#D0A98B] px-3 py-2 text-xs font-bold text-[#211713] shadow-sm transition-colors hover:bg-[#F0DFCE] disabled:opacity-50"
+            className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border border-[#A87557] bg-[#D0A98B] px-3 py-2 text-xs font-bold text-[#211713] shadow-sm transition-colors hover:bg-[#F0DFCE] disabled:opacity-50"
             title="Step 01: Buy stock and simulate one day of sales"
           >
             <Play className="h-3.5 w-3.5 fill-current" />
@@ -99,8 +99,8 @@ export default function JudgeDemoBar({
             disabled={!hasReports}
             className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
               hasReports
-                ? 'border-[#493027]/30 bg-[#A87557]/10 text-[#F0DFCE] hover:bg-[#D0A98B]/20'
-                : 'cursor-not-allowed border-[#493027] bg-[#493027] text-[#D0A98B]'
+                ? 'border-[#A87557] bg-[#A87557]/10 text-[#F0DFCE] hover:bg-[#D0A98B]/20'
+                : 'cursor-not-allowed border-[#A87557] bg-[#493027] text-[#D0A98B]'
             }`}
             title="Step 02: Show the revenue, costs and profit report"
           >
@@ -116,10 +116,10 @@ export default function JudgeDemoBar({
             onClick={onTriggerShockStep03}
             className={`inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${
               shockResolved
-                ? 'border-[#76503B]/30 bg-[#A87557]/10 text-[#F0DFCE] hover:bg-[#D0A98B]/20'
+                ? 'border-[#A87557] bg-[#A87557]/10 text-[#F0DFCE] hover:bg-[#D0A98B]/20'
                 : shockTriggered
-                ? 'border-[#76503B]/50 bg-[#A87557]/15 text-[#F0DFCE] hover:bg-[#D0A98B]/25'
-                : 'border-[#76503B] bg-[#D0A98B] text-[#211713] hover:bg-[#F0DFCE]'
+                ? 'border-[#A87557] bg-[#A87557]/15 text-[#F0DFCE] hover:bg-[#D0A98B]/25'
+                : 'border-[#A87557] bg-[#D0A98B] text-[#211713] hover:bg-[#F0DFCE]'
             }`}
             title="Step 03: Trigger the milk price shock and demonstrate decision options"
           >
@@ -132,7 +132,7 @@ export default function JudgeDemoBar({
           <button
             type="button"
             onClick={onOpenMenu}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[#76503B] bg-[#493027] px-3 py-2 text-xs font-medium text-[#F0DFCE] transition-colors hover:border-[#76503B]/40 hover:bg-[#493027]"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[#A87557] bg-[#493027] px-3 py-2 text-xs font-medium text-[#F0DFCE] transition-colors hover:border-[#A87557] hover:bg-[#493027]"
           >
             <UtensilsCrossed className="h-3.5 w-3.5 text-[#F0DFCE]" />
             Bawaal menu
@@ -140,7 +140,7 @@ export default function JudgeDemoBar({
           <button
             type="button"
             onClick={onOpenDocs}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[#76503B] bg-[#493027] px-3 py-2 text-xs font-medium text-[#F0DFCE] transition-colors hover:border-[#76503B]/40 hover:bg-[#493027]"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[#A87557] bg-[#493027] px-3 py-2 text-xs font-medium text-[#F0DFCE] transition-colors hover:border-[#A87557] hover:bg-[#493027]"
           >
             <FileText className="h-3.5 w-3.5 text-[#F0DFCE]" />
             Docs
@@ -150,7 +150,7 @@ export default function JudgeDemoBar({
             onClick={onResetGame}
             aria-label="Reset game"
             title="Reset Game to Day 1"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#76503B] bg-[#493027] text-[#D0A98B] transition-colors hover:bg-[#493027] hover:text-[#F0DFCE]"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#A87557] bg-[#493027] text-[#D0A98B] transition-colors hover:bg-[#493027] hover:text-[#F0DFCE]"
           >
             <RotateCcw className="h-4 w-4" />
           </button>

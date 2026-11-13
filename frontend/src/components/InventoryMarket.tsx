@@ -33,11 +33,11 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
   const ingredientsList = Object.entries(gameState.inventory) as [keyof InventoryMap, typeof gameState.inventory['tea_leaves']][];
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border-2 border-[#A87557] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
       {/* Title & Live Capacity Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#493027] gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#A87557] gap-3">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30">
+          <div className="p-2 rounded-xl bg-[#A87557]/20 text-[#F0DFCE] border border-[#A87557]">
             <ShoppingCart className="w-5 h-5" />
           </div>
           <div>
@@ -51,14 +51,14 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
         </div>
 
         {/* Live Brewable Capacity Badge */}
-        <div className="bg-[#493027] border border-[#76503B]/40 rounded-xl px-4 py-2 flex items-center gap-3">
+        <div className="bg-[#493027] border border-[#A87557] rounded-xl px-4 py-2 flex items-center gap-3">
           <div className="text-right">
             <p className="text-[11px] tracking-wide text-[#D0A98B] uppercase font-semibold">Max Brewable</p>
             <p className="text-lg font-black text-[#F0DFCE] font-mono">
               {maxCapacity.maxCups} <span className="text-xs font-normal text-[#F0DFCE]">cups</span>
             </p>
           </div>
-          <div className="border-l border-[#493027] pl-3">
+          <div className="border-l border-[#A87557] pl-3">
             <span className="text-[11px] tracking-wide text-[#D0A98B] uppercase font-semibold block">Bottleneck</span>
             <span className="text-xs font-semibold text-[#F0DFCE] flex items-center gap-1">
               <AlertCircle className="w-3 h-3 text-[#F0DFCE] inline" />
@@ -70,7 +70,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
 
       {/* Temporary purchase toast feedback */}
       {purchaseFeedback && (
-        <div role="status" aria-live="polite" className="mt-3 rounded-xl border border-[#76503B]/30 bg-[#A87557]/10 p-3 text-sm font-medium text-[#F0DFCE] animate-fadeIn">
+        <div role="status" aria-live="polite" className="mt-3 rounded-xl border border-[#A87557] bg-[#A87557]/10 p-3 text-sm font-medium text-[#F0DFCE] animate-fadeIn">
           <Sparkles className="w-4 h-4 text-[#F0DFCE] shrink-0" />
           <span>{purchaseFeedback}</span>
         </div>
@@ -97,12 +97,12 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
           return (
             <div
               key={key}
-              className={`relative bg-[#493027]/85 border rounded-xl p-4 transition-all hover:border-[#76503B]/50 flex flex-col justify-between ${
+              className={`relative bg-[#493027]/85 border rounded-xl p-4 transition-all hover:border-[#A87557] flex flex-col justify-between ${
                 isBottleneck
-                  ? 'border-[#76503B]/70 shadow-[0_0_15px_rgba(245,158,11,0.15)] ring-1 ring-[#76503B]/40'
+                  ? 'border-[#A87557] shadow-[0_0_15px_rgba(245,158,11,0.15)] ring-1 ring-[#D0A98B]'
                   : isMilkShock
-                  ? 'border-[#493027]/70 shadow-[0_0_15px_rgba(239,68,68,0.15)]'
-                  : 'border-[#493027]'
+                  ? 'border-[#A87557] shadow-[0_0_15px_rgba(239,68,68,0.15)]'
+                  : 'border-[#A87557]'
               }`}
             >
               {/* Bottleneck Badge */}
@@ -123,7 +123,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                 {/* Item Header */}
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2.5">
-                    <span className="text-2xl p-1.5 rounded-lg bg-[#493027] border border-[#493027]">
+                    <span className="text-2xl p-1.5 rounded-lg bg-[#493027] border border-[#A87557]">
                       {item.icon}
                     </span>
                     <div>
@@ -136,7 +136,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                 </div>
 
                 {/* Stock Level & Wholesale Cost */}
-                <div className="mt-3.5 grid grid-cols-2 gap-2 bg-[#493027]/90 rounded-lg p-2.5 border border-[#493027]/80">
+                <div className="mt-3.5 grid grid-cols-2 gap-2 bg-[#493027]/90 rounded-lg p-2.5 border border-[#A87557]">
                   <div>
                     <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block">In Stock</span>
                     <span className="text-base font-bold text-[#F0DFCE] font-mono">
@@ -157,7 +157,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
               </div>
 
               {/* Quick Restock Buttons */}
-              <div className="mt-4 pt-3 border-t border-[#493027]">
+              <div className="mt-4 pt-3 border-t border-[#A87557]">
                 <span className="text-[10px] text-[#D0A98B] uppercase font-semibold block mb-1.5">
                   Restock from Wholesale:
                 </span>
@@ -174,8 +174,8 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                         disabled={!canAfford}
                         className={`py-1.5 px-1 rounded-md text-xs font-medium text-center transition-all flex flex-col items-center justify-center ${
                           canAfford
-                            ? 'bg-[#493027] hover:bg-[#D0A98B] hover:text-[#211713] text-[#F0DFCE] border border-[#76503B] active:scale-95'
-                            : 'bg-[#493027]/50 text-[#D0A98B] border border-[#493027] cursor-not-allowed opacity-50'
+                            ? 'bg-[#493027] hover:bg-[#D0A98B] hover:text-[#211713] text-[#F0DFCE] border border-[#A87557] active:scale-95'
+                            : 'bg-[#493027]/50 text-[#D0A98B] border border-[#A87557] cursor-not-allowed opacity-50'
                         }`}
                         title={`Cost: ₹${cost.toFixed(2)}`}
                       >
@@ -195,8 +195,8 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                     disabled={maxAffordable <= 0}
                     className={`py-1.5 px-1 rounded-md text-xs font-semibold text-center transition-all flex flex-col items-center justify-center ${
                       maxAffordable > 0
-                        ? 'bg-[#493027]/60 hover:bg-[#D0A98B] text-[#F0DFCE] border border-[#76503B]/40 active:scale-95'
-                        : 'bg-[#493027]/50 text-[#D0A98B] border border-[#493027] cursor-not-allowed opacity-50'
+                        ? 'bg-[#493027]/60 hover:bg-[#D0A98B] text-[#F0DFCE] border border-[#A87557] active:scale-95'
+                        : 'bg-[#493027]/50 text-[#D0A98B] border border-[#A87557] cursor-not-allowed opacity-50'
                     }`}
                     title={maxAffordable > 0 ? `Buy max ${maxAffordable} ${item.unit} for ₹${(maxAffordable * item.unitCost).toFixed(2)}` : 'Cannot afford'}
                   >
