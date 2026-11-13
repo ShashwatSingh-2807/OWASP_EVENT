@@ -33,7 +33,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
   const ingredientsList = Object.entries(gameState.inventory) as [keyof InventoryMap, typeof gameState.inventory['tea_leaves']][];
 
   return (
-    <section className="bg-stone-900/90 border border-amber-600/30 rounded-2xl p-5 sm:p-6 shadow-xl backdrop-blur-md">
+    <section className="bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-700/80 rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
       {/* Title & Live Capacity Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-stone-800 gap-3">
         <div className="flex items-center gap-2.5">
@@ -53,7 +53,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
         {/* Live Brewable Capacity Badge */}
         <div className="bg-stone-950 border border-amber-500/40 rounded-xl px-4 py-2 flex items-center gap-3">
           <div className="text-right">
-            <p className="text-[10px] text-stone-400 uppercase font-semibold">Max Brewable</p>
+            <p className="text-[11px] tracking-wide text-stone-400 uppercase font-semibold">Max Brewable</p>
             <p className="text-lg font-black text-amber-400 font-mono">
               {maxCapacity.maxCups} <span className="text-xs font-normal text-stone-300">cups</span>
             </p>
@@ -180,7 +180,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                         title={`Cost: ₹${cost.toFixed(2)}`}
                       >
                         <span className="font-bold">+{inc}</span>
-                        <span className="text-[9px] text-stone-400 font-mono">₹{cost.toFixed(0)}</span>
+                        <span className="text-[10px] text-stone-400 font-mono">₹{cost.toFixed(0)}</span>
                       </button>
                     );
                   })}
