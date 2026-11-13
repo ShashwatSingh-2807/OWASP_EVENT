@@ -50,11 +50,11 @@ export default function MilkShockModal({
 
   return (
     <div role="dialog" aria-modal="true" aria-label="Minute 40 milk supply shock decision" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-stone-950/90 backdrop-blur-md overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-gradient-to-b from-stone-900 via-stone-950 to-red-950/40 border-3 border-red-500/80 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-6 max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-gradient-to-b from-stone-900 via-stone-950 to-red-950/40 border border-red-500/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-6 max-h-[92vh] overflow-y-auto">
         {/* Step 03 & Twist Badge */}
         <div className="flex items-center justify-between pb-4 border-b border-stone-800 flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-red-500/20 text-red-300 border border-red-500/50 text-xs font-mono font-bold tracking-wide flex items-center gap-1.5 animate-pulse">
+            <span className="px-3 py-1 rounded-full bg-red-500/10 text-red-200 border border-red-500/30 text-xs font-mono font-bold tracking-wide flex items-center gap-1.5">
               <ShieldAlert className="w-4 h-4 text-red-400" />
               MINUTE 40 TWIST: SUPPLY SHOCK
             </span>
@@ -69,7 +69,7 @@ export default function MilkShockModal({
         </div>
 
         {/* Breaking News Crisis Banner */}
-        <div className="mt-4 p-5 rounded-2xl bg-gradient-to-r from-red-950 via-stone-900 to-red-950 border-2 border-red-600/70 shadow-lg relative overflow-hidden">
+        <div className="mt-4 p-5 rounded-2xl bg-red-950/35 border border-red-500/40 shadow-lg shadow-red-950/20 relative overflow-hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-start gap-3.5">
               <div className="text-4xl p-2.5 rounded-2xl bg-red-600/20 border border-red-500/40 text-red-400 shrink-0">
