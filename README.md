@@ -199,35 +199,8 @@ This means:
 
 The repository retains an earlier Express + SQLite backend prototype under `backend/`. It is not connected to the current frontend gameplay flow and is not required to run or deploy the game.
 
-## 🚀 Run locally
 
-### Prerequisites
 
-- Node.js **20.9 or newer**
-- npm
-- A modern web browser
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/r-samarth/OWASP_EVENT.git
-cd OWASP_EVENT
-```
-
-### 2. Install frontend dependencies
-
-```bash
-cd frontend
-npm install
-```
-
-### 3. Start the development server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Available scripts
 
