@@ -37,7 +37,7 @@ export default function JudgeDemoBar({
   const shockResolved = gameState.shock.resolved;
 
   return (
-    <div className="sticky top-0 z-40 border-b border-[#76503B]/80 bg-[#211713]/95 px-3 py-2 text-[#F0DFCE] shadow-lg shadow-black/25 backdrop-blur-xl">
+    <div className="sticky top-0 z-40 border-b border-[#76503B]/80 bg-[#211713]/95 px-3 py-2 text-[#F0DFCE] shadow-lg shadow-[#211713]/30 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl flex-col gap-2.5 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex min-w-0 items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2.5">
@@ -119,7 +119,7 @@ export default function JudgeDemoBar({
                 ? 'border-[#76503B]/30 bg-[#A87557]/10 text-[#F0DFCE] hover:bg-[#D0A98B]/20'
                 : shockTriggered
                 ? 'border-[#76503B]/50 bg-[#A87557]/15 text-[#F0DFCE] hover:bg-[#D0A98B]/25'
-                : 'border-[#493027]/40 bg-[#A87557] text-[#F0DFCE] hover:bg-[#D0A98B]'
+                : 'border-[#76503B] bg-[#D0A98B] text-[#211713] hover:bg-[#F0DFCE]'
             }`}
             title="Step 03: Trigger the milk price shock and demonstrate decision options"
           >
