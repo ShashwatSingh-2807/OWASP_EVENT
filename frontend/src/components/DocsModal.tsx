@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FileText, X, CheckCircle2, ShieldCheck, BookOpen, Layers, Terminal, Sparkles } from 'lucide-react';
 
 interface DocsModalProps {
@@ -13,10 +13,21 @@ type DocTab = 'PRD' | 'ARCHITECTURE' | 'AGENTS' | 'DECISIONS' | 'TASKS' | 'CONTE
 export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
   const [activeTab, setActiveTab] = useState<DocTab>('PRD');
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-stone-950/90 backdrop-blur-md overflow-y-auto animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-labelledby="docs-modal-heading" className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-stone-950/90 backdrop-blur-md overflow-y-auto animate-fadeIn">
       <div className="relative w-full max-w-5xl bg-stone-900 border-2 border-amber-500/60 rounded-3xl p-6 sm:p-8 shadow-2xl text-white my-6 max-h-[92vh] flex flex-col">
         {/* Modal Header */}
         <div className="flex items-center justify-between pb-4 border-b border-stone-800">
@@ -25,7 +36,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl font-black text-amber-100 font-serif">
+              <h3 id="docs-modal-heading" className="text-xl sm:text-2xl font-black text-amber-100 font-serif">
                 Chai Stall Tycoon Documentation Suite
               </h3>
               <p className="text-xs text-stone-400">
@@ -35,6 +46,8 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
           </div>
 
           <button
+            type="button"
+            aria-label="Close documentation"
             onClick={onClose}
             className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-400 hover:text-white transition-colors"
           >
@@ -43,10 +56,14 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-1.5 overflow-x-auto py-3 border-b border-stone-800 text-xs font-semibold no-scrollbar">
+        <div role="tablist" aria-label="Project documents" className="flex items-center gap-1.5 overflow-x-auto py-3 border-b border-stone-800 text-xs font-semibold no-scrollbar">
           {(['PRD', 'ARCHITECTURE', 'AGENTS', 'DECISIONS', 'TASKS', 'CONTEXT', 'README'] as DocTab[]).map((tab) => (
             <button
               key={tab}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab}
+              aria-controls="docs-content"
               onClick={() => setActiveTab(tab)}
               className={`px-3.5 py-1.5 rounded-lg whitespace-nowrap transition-all font-mono ${
                 activeTab === tab
@@ -60,7 +77,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
         </div>
 
         {/* Document Content Viewer */}
-        <div className="flex-1 overflow-y-auto my-4 pr-2 text-stone-300 space-y-4 text-xs sm:text-sm leading-relaxed">
+        <div id="docs-content" role="tabpanel" tabIndex={0} className="flex-1 overflow-y-auto my-4 pr-2 text-stone-300 space-y-4 text-xs sm:text-sm leading-relaxed">
           {activeTab === 'PRD' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-amber-200">Product Requirements Document (PRD.md)</h2>
@@ -216,6 +233,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
         {/* Modal Footer */}
         <div className="pt-4 border-t border-stone-800 flex justify-end">
           <button
+            type="button"
             onClick={onClose}
             className="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-xs"
           >
