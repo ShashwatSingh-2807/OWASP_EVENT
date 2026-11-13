@@ -53,7 +53,7 @@ export default function RushHourSimulationModal({
           }, 400);
           return 100;
         }
-        const next = prev + 3;
+        const next = Math.min(100, prev + 3);
         if (next > 65) setCurrentShiftIndex(2);
         else if (next > 30) setCurrentShiftIndex(1);
         else setCurrentShiftIndex(0);
@@ -124,7 +124,7 @@ export default function RushHourSimulationModal({
           </div>
 
           {/* Current Rush Shift Banner */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold mt-1">
+          <div role="status" aria-live="polite" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold mt-1">
             <Clock className="w-3.5 h-3.5" />
             <span>{activeShift.name}</span>
           </div>
