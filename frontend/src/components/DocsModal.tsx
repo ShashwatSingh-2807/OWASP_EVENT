@@ -61,6 +61,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
             <button
               key={tab}
               type="button"
+              id={`docs-tab-${tab.toLowerCase()}`}
               role="tab"
               aria-selected={activeTab === tab}
               aria-controls="docs-content"
@@ -77,7 +78,7 @@ export default function DocsModal({ isOpen, onClose }: DocsModalProps) {
         </div>
 
         {/* Document Content Viewer */}
-        <div id="docs-content" role="tabpanel" tabIndex={0} className="flex-1 overflow-y-auto my-4 pr-2 text-stone-300 space-y-4 text-xs sm:text-sm leading-relaxed">
+        <div id="docs-content" role="tabpanel" aria-labelledby={`docs-tab-${activeTab.toLowerCase()}`} tabIndex={0} className="flex-1 overflow-y-auto my-4 pr-2 text-stone-300 space-y-4 text-xs sm:text-sm leading-relaxed">
           {activeTab === 'PRD' && (
             <div className="space-y-4">
               <h2 className="text-xl font-bold text-amber-200">Product Requirements Document (PRD.md)</h2>
