@@ -5,7 +5,7 @@
   --foreground: #F0DFCE;
   --surface: #493027;
   --surface-raised: #76503B;
-  --surface-muted: #2B1D17;
+  --surface-muted: #493027;
   --accent: #A87557;
   --accent-soft: #D0A98B;
   --text-muted: #D0A98B;
@@ -31,7 +31,7 @@ body {
   background:
     radial-gradient(ellipse at 18% 0%, rgba(168, 117, 87, 0.18), transparent 40%),
     radial-gradient(ellipse at 88% 16%, rgba(118, 80, 59, 0.15), transparent 34%),
-    linear-gradient(180deg, #211713 0%, #211713 52%, #1B120F 100%);
+    linear-gradient(180deg, #211713 0%, #211713 52%, #211713 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-feature-settings: "ss01" on, "cv11" on;
@@ -71,7 +71,7 @@ button:disabled {
 }
 
 * {
-  scrollbar-color: #76503B #2B1D17;
+  scrollbar-color: #76503B #493027;
   scrollbar-width: thin;
 }
 
@@ -81,12 +81,12 @@ button:disabled {
 }
 
 *::-webkit-scrollbar-track {
-  background: #2B1D17;
+  background: #493027;
 }
 
 *::-webkit-scrollbar-thumb {
   background: #76503B;
-  border: 2px solid #2B1D17;
+  border: 2px solid #493027;
   border-radius: 999px;
 }
 
