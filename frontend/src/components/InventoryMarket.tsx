@@ -33,7 +33,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
   const ingredientsList = Object.entries(gameState.inventory) as [keyof InventoryMap, typeof gameState.inventory['tea_leaves']][];
 
   return (
-    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-black/20">
+    <section className="bg-gradient-to-br from-[#493027] to-[#493027] border border-[#76503B] rounded-2xl p-5 sm:p-7 shadow-xl shadow-[#211713]/30">
       {/* Title & Live Capacity Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#493027] gap-3">
         <div className="flex items-center gap-2.5">
@@ -174,7 +174,7 @@ export default function InventoryMarket({ gameState, onRestock }: InventoryMarke
                         disabled={!canAfford}
                         className={`py-1.5 px-1 rounded-md text-xs font-medium text-center transition-all flex flex-col items-center justify-center ${
                           canAfford
-                            ? 'bg-[#493027] hover:bg-[#D0A98B] hover:text-[#F0DFCE] text-[#F0DFCE] border border-[#76503B] active:scale-95'
+                            ? 'bg-[#493027] hover:bg-[#D0A98B] hover:text-[#211713] text-[#F0DFCE] border border-[#76503B] active:scale-95'
                             : 'bg-[#493027]/50 text-[#D0A98B] border border-[#493027] cursor-not-allowed opacity-50'
                         }`}
                         title={`Cost: ₹${cost.toFixed(2)}`}
