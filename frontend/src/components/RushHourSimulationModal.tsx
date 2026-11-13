@@ -76,22 +76,22 @@ export default function RushHourSimulationModal({
   const weather = WEATHER_PROFILES[finalReport.weather];
 
   return (
-    <div role="dialog" aria-modal="true" aria-labelledby="simulation-heading" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-lg animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-gradient-to-b from-white to-sky-50 border border-sky-200 rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-900/10 overflow-hidden text-slate-900">
+    <div role="dialog" aria-modal="true" aria-labelledby="simulation-heading" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#211713]/90 backdrop-blur-lg animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-gradient-to-b from-[#493027] to-[#211713] border border-[#76503B] rounded-3xl p-6 sm:p-8 shadow-xl shadow-[#493027]/10 overflow-hidden text-[#F0DFCE]">
         {/* Decorative Steam / Glow Background */}
-        <div className="absolute top-0 right-10 w-64 h-64 bg-sky-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-10 w-64 h-64 bg-[#A87557]/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Modal Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div className="flex items-center justify-between pb-4 border-b border-[#76503B]">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-sky-600/30 text-sky-700 border border-sky-300/40 animate-pulse">
+            <div className="p-2.5 rounded-xl bg-[#A87557]/30 text-[#F0DFCE] border border-[#76503B]/40 animate-pulse">
               <Flame className="w-6 h-6" />
             </div>
             <div>
-              <h3 id="simulation-heading" className="text-xl sm:text-2xl font-black text-slate-900 font-serif">
+              <h3 id="simulation-heading" className="text-xl sm:text-2xl font-black text-[#F0DFCE] font-serif">
                 Simulating Day {finalReport.day} Sales
               </h3>
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-[#D0A98B]">
                 Weather: {weather.icon} {weather.name} • Stall Menu: {MENU_ITEMS[finalReport.activeMenu]?.name}
               </p>
             </div>
@@ -100,22 +100,22 @@ export default function RushHourSimulationModal({
           <button
             type="button"
             onClick={onFinish}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 text-xs font-semibold transition-all active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#493027] hover:bg-[#76503B] text-[#F0DFCE] border border-[#76503B] text-xs font-semibold transition-all active:scale-95"
             title="Skip directly to the Day Report"
           >
-            <FastForward className="w-4 h-4 text-sky-700" />
+            <FastForward className="w-4 h-4 text-[#F0DFCE]" />
             <span>Skip to Report</span>
           </button>
         </div>
 
         {/* Animated Tapri Rush Visual Scene */}
-        <div className="my-6 bg-slate-50/80 border border-slate-200 rounded-2xl p-5 text-center relative overflow-hidden">
+        <div className="my-6 bg-[#493027]/80 border border-[#76503B] rounded-2xl p-5 text-center relative overflow-hidden">
           {/* Animated Tapri Boiling Kettle Graphic */}
           <div className="flex items-center justify-center gap-4 py-3">
             <div className="text-5xl animate-bounce">
               🫖
             </div>
-            <div className="text-3xl text-sky-700 font-mono font-bold animate-pulse">
+            <div className="text-3xl text-[#F0DFCE] font-mono font-bold animate-pulse">
               ➔ ☕
             </div>
             <div className="text-5xl">
@@ -124,18 +124,18 @@ export default function RushHourSimulationModal({
           </div>
 
           {/* Current Rush Shift Banner */}
-          <div role="status" aria-live="polite" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-600/20 text-sky-800 border border-sky-300/30 text-xs font-semibold mt-1">
+          <div role="status" aria-live="polite" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#A87557]/20 text-[#F0DFCE] border border-[#76503B]/30 text-xs font-semibold mt-1">
             <Clock className="w-3.5 h-3.5" />
             <span>{activeShift.name}</span>
           </div>
-          <p className="text-xs text-slate-600 mt-1 max-w-md mx-auto">
+          <p className="text-xs text-[#D0A98B] mt-1 max-w-md mx-auto">
             {activeShift.desc}
           </p>
 
           {/* Speech Bubble from crowd */}
-          <div className="mt-4 p-3 rounded-xl bg-sky-50/60 border border-sky-300/30 inline-block text-xs sm:text-sm text-sky-800 italic font-medium max-w-lg shadow-md animate-fadeIn">
+          <div className="mt-4 p-3 rounded-xl bg-[#493027]/60 border border-[#76503B]/30 inline-block text-xs sm:text-sm text-[#F0DFCE] italic font-medium max-w-lg shadow-md animate-fadeIn">
             {SHOUTOUTS[shoutoutIndex].text}
-            <span className="block text-[10px] text-sky-700/80 not-italic font-normal mt-0.5">
+            <span className="block text-[10px] text-[#F0DFCE]/80 not-italic font-normal mt-0.5">
               — {SHOUTOUTS[shoutoutIndex].author}
             </span>
           </div>
@@ -143,7 +143,7 @@ export default function RushHourSimulationModal({
 
         {/* Progress Bar */}
         <div className="space-y-1.5">
-          <div className="flex justify-between text-xs text-slate-600 font-medium">
+          <div className="flex justify-between text-xs text-[#D0A98B] font-medium">
             <span>Stall Progress</span>
             <span className="font-mono">{progress}% Complete</span>
           </div>
@@ -153,10 +153,10 @@ export default function RushHourSimulationModal({
             aria-valuemin={0}
             aria-valuemax={100}
             aria-valuenow={progress}
-            className="w-full bg-slate-100 h-3 rounded-full overflow-hidden p-0.5 border border-slate-300"
+            className="w-full bg-[#493027] h-3 rounded-full overflow-hidden p-0.5 border border-[#76503B]"
           >
             <div
-              className="bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 h-full rounded-full transition-all duration-75"
+              className="bg-gradient-to-r from-[#A87557] via-[#A87557] to-[#A87557] h-full rounded-full transition-all duration-75"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -164,16 +164,16 @@ export default function RushHourSimulationModal({
 
         {/* Live Ticker Stats */}
         <div className="grid grid-cols-2 gap-4 mt-6">
-          <div className="bg-white/90 border border-slate-200 rounded-xl p-3.5 text-center">
-            <span className="text-[11px] text-slate-600 uppercase font-semibold block">Cups Brewed & Sold</span>
-            <span className="text-2xl sm:text-3xl font-black text-sky-800 font-mono">
-              {currentCups} <span className="text-sm font-normal text-slate-600">/ {finalReport.cupsDemanded}</span>
+          <div className="bg-[#493027]/90 border border-[#76503B] rounded-xl p-3.5 text-center">
+            <span className="text-[11px] text-[#D0A98B] uppercase font-semibold block">Cups Brewed & Sold</span>
+            <span className="text-2xl sm:text-3xl font-black text-[#F0DFCE] font-mono">
+              {currentCups} <span className="text-sm font-normal text-[#D0A98B]">/ {finalReport.cupsDemanded}</span>
             </span>
           </div>
 
-          <div className="bg-white/90 border border-slate-200 rounded-xl p-3.5 text-center">
-            <span className="text-[11px] text-slate-600 uppercase font-semibold block">Cash Collected</span>
-            <span className="text-2xl sm:text-3xl font-black text-emerald-700 font-mono flex items-center justify-center">
+          <div className="bg-[#493027]/90 border border-[#76503B] rounded-xl p-3.5 text-center">
+            <span className="text-[11px] text-[#D0A98B] uppercase font-semibold block">Cash Collected</span>
+            <span className="text-2xl sm:text-3xl font-black text-[#F0DFCE] font-mono flex items-center justify-center">
               <IndianRupee className="w-6 h-6 inline -mr-1" />
               {currentRevenue.toFixed(0)}
             </span>
