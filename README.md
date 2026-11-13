@@ -123,14 +123,21 @@ The interface uses a warm **espresso, cocoa and caramel** visual system based on
 
 | Colour | Hex | Role |
 | --- | --- | --- |
-| Espresso | `#211713` | Main page background |
-| Deep cocoa | `#493027` | Dashboard cards and primary surfaces |
-| Roast brown | `#76503B` | Raised panels, borders and selected states |
-| Caramel | `#A87557` | Secondary accents and visual details |
-| Warm tan | `#D0A98B` | Primary actions and highlights |
-| Soft cream | `#F0DFCE` | Main typography and high-contrast content |
+| Espresso | `#211713` | Main page background and deepest contrast |
+| Deep cocoa | `#493027` | Main dashboard cards, metric panels and modal surfaces |
+| Roast brown | `#76503B` | Secondary surface tone and hover/pressed states |
+| Caramel | `#A87557` | Visible card outlines, section borders and secondary accents |
+| Warm tan | `#D0A98B` | Primary actions, keyboard-focus outlines and highlights |
+| Soft cream | `#F0DFCE` | Main text, labels and high-contrast content |
 
-The layout is responsive and designed to work across desktop, tablet and mobile screens.
+### Border and surface treatment
+
+The interface uses deliberately visible outlines so adjacent panels do not blend into the dark background:
+
+- **Main dashboard sections and modal shells:** solid 2px caramel (`#A87557`) outlines.
+- **Nested cards, controls and dividers:** solid 1px caramel outlines.
+- **Keyboard focus:** a 2px warm-tan (`#D0A98B`) outline with a 3px offset.
+- **Surface hierarchy:** espresso for the page canvas, deep cocoa for primary cards, and roast brown for secondary emphasis.
 
 The layout is responsive and designed to work across desktop, tablet and mobile screens.
 
